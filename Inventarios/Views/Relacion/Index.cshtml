@@ -1,0 +1,168 @@
+﻿@model IEnumerable<Inventarios.Models.Relacion>
+
+@{
+    ViewBag.Title = "Relaciones";
+    List<string> relaciones = new List<string>();
+    List<string> items = new List<string>();
+}
+
+<h2>Relaciones</h2>
+
+<p>
+    @Html.ActionLink("Agregar nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Articulo
+        </th>
+        <th>
+            Articulo
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulos1.VistaArticulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulos2.VistaArticulo)
+        </td>
+        <td>
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdRelacion })
+        </td>
+
+        @{
+            var articulo1 = "data: { id: '" + item.IdArticulo1 + "', name: '" + item.Articulos1.VistaArticulo +"', weight: 100, height: 190 }";
+            var articulo2 = "data: { id: '" + item.IdArticulo2 + "', name: '" + item.Articulos2.VistaArticulo + "', weight: 100, height: 190 }"; 
+            
+            relaciones.Add("{ data: { source: '" + item.IdArticulo1 + "', target: '" + item.IdArticulo2 +"' } }");
+
+            if(!items.Exists( x => x.Equals(articulo1)))
+            {
+                items.Add(articulo1);    
+            }
+            
+            if (!items.Exists(x => x.Equals(articulo2)))
+            {
+                items.Add(articulo2);
+            }
+        }
+    </tr>
+}
+</table>
+
+<div id="cy"></div>
+
+<script>
+    $(function () {
+
+        options = {
+            showOverlay: false,
+            zoomingEnabled: false,
+            userZoomingEnabled: false,
+
+            style: cytoscape.stylesheet()
+              .selector('node')
+                .css({
+                    'content': 'data(name)',
+                    'font-family': 'helvetica',
+                    'font-size': 14,
+                    'text-outline-width': 3,
+                    'text-outline-color': 'white',
+                    'text-valign': 'center',
+                    'color': 'black',
+                    'width': 'mapData(weight, 30, 80, 20, 50)',
+                    'height': 'mapData(height, 0, 200, 10, 45)',
+                    'border-color': '#fff'
+                })
+              .selector(':selected')
+                .css({
+                    'background-color': '#000',
+                    'line-color': '#000',
+                    'target-arrow-color': '#000',
+                    'text-outline-color': '#000'
+                })
+              .selector('edge')
+                .css({
+                    'width': 2,
+                    'target-arrow-shape': 'triangle'
+                })
+            ,
+
+            elements: {
+                nodes: [
+                @for(var i=0; i < items.Count - 1; i++)
+                {
+                    
+                    @Html.Raw(HttpUtility.HtmlDecode("{" + items[i] + "},"));
+                    
+                }
+
+                @Html.Raw(items.Count > 0 ? HttpUtility.HtmlDecode("{" + items[items.Count - 1]) + "}" : "")
+                
+                ],
+
+                edges: [
+                @for(var i=0; i < relaciones.Count - 1; i++)
+                {
+                    @Html.Raw(HttpUtility.HtmlDecode((relaciones[i] + ",")));
+                }
+                @Html.Raw(relaciones.Count > 0 ? HttpUtility.HtmlDecode(relaciones[relaciones.Count - 1]) : "")                
+                ],
+            },
+
+            ready: function () {
+                cy = this;
+            }
+        };
+
+        $('#cy').cytoscape(options);
+
+    });
+
+    function apachurrado() {
+        options = {
+            name: 'arbor',
+            liveUpdate: true, // whether to show the layout as it's running
+            ready: undefined, // callback on layoutready
+            stop: undefined, // callback on layoutstop
+            maxSimulationTime: 4000, // max length in ms to run the layout
+            fit: true, // reset viewport to fit default simulationBounds
+            padding: [50, 50, 50, 50], // top, right, bottom, left
+            simulationBounds: undefined, // [x1, y1, x2, y2]; [0, 0, width, height] by default
+            ungrabifyWhileSimulating: true, // so you can't drag nodes during layout
+
+            // forces used by arbor (use arbor default on undefined)
+            repulsion: undefined,
+            stiffness: undefined,
+            friction: undefined,
+            gravity: true,
+            fps: undefined,
+            precision: undefined,
+
+            // static numbers or functions that dynamically return what these
+            // values should be for each element
+            nodeMass: undefined,
+            edgeLength: undefined,
+
+            stepSize: 1, // size of timestep in simulation
+
+            // function that returns true if the system is stable to indicate
+            // that the layout can be stopped
+            stableEnergy: function (energy) {
+                var e = energy;
+                return (e.max <= 0.5) || (e.mean <= 0.3);
+            }
+        };
+
+
+        cy.layout(options);
+    }
+
+</script>
+
+<input type="button" onclick="apachurrado();" value="Reacomodar" />
+

@@ -1,0 +1,61 @@
+﻿@model Inventarios.Models.Contratos
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Contratos</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaContrato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaContrato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detalles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detalles)
+        </dd>
+
+        <dt>
+            Articulo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Articulos.VistaArticulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TercerasPersonas.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TercerasPersonas.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoContrato.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoContrato.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (@User.IsInRole("Administrador")) 
+    {
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdContrato }) 
+    }
+    @Html.ActionLink(" Regresar al listado ", "Index")
+</p>

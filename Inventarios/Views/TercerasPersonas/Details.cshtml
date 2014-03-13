@@ -1,0 +1,58 @@
+﻿@model Inventarios.Models.TercerasPersonas
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Terceras Personas</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rfc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rfc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detalles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detalles)
+        </dd>
+
+        <dt>
+            Tipo de compañía
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoCompania.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdTerceraPersona }) |
+    @Html.ActionLink("Regresar al listado", "Index")
+</p>

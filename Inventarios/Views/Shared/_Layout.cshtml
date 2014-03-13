@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/cytoscape")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Inventario", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+<<<<<<< HEAD
+                <ul class="nav navbar-nav">
+                    @if (ViewContext.HttpContext.User.IsInRole("Administrador")) {
+                        <li>@Html.ActionLink("Personal", "Index", "Personal")</li>
+                        <li>@Html.ActionLink("Departamentos", "Index", "Departamentos")</li>
+                        <li>@Html.ActionLink("Tipos de compañía", "Index", "TipoCompania")</li>
+                        <li>@Html.ActionLink("Tipos de articulo", "Index", "TipoArticulo")</li>
+                        <li>@Html.ActionLink("Terceros", "Index", "TercerasPersonas")</li>
+                        <li>@Html.ActionLink("Contratos", "Index", "Contrato")</li>
+                        <li>@Html.ActionLink("Modelos", "Index", "Modelos")</li>
+                        <li>@Html.ActionLink("Localizacion", "Index", "Localizacion")</li>
+                        <li>@Html.ActionLink("Articulos", "Index", "Articulo")</li>
+                        <li>@Html.ActionLink("Tipo de contrato", "Index", "TipoContrato")</li>
+                    }
+                    
+                    @if (ViewContext.HttpContext.User.IsInRole("Miembros"))
+                    {
+                        <li>@Html.ActionLink("Articulos", "Index", "Articulo")</li>
+                        <li>@Html.ActionLink("Contratos", "Index", "Contrato")</li>
+                        <li>@Html.ActionLink("Modelos", "Index", "Modelos")</li>
+                    }
+
+                </ul>
+=======
+>>>>>>> Ultimos ajustes
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-text">Bienvenido <b>@User.Identity.Name</b>!</li>
+                </ul>
+                <ul class="nav navbar-nav">  
+                
+                     @if(@User.IsInRole("Administrador"))
+                     {
+                        <li>@Html.ActionLink("Personal", "Index", "Personal")</li>
+                        <li>@Html.ActionLink("Departamentos", "Index", "Departamentos")</li>
+                        <li>@Html.ActionLink("Tipos de compañía", "Index", "TipoCompania")</li>
+                        <li>@Html.ActionLink("Tipos de articulo", "Index", "TipoArticulo")</li>
+                        <li>@Html.ActionLink("Terceros", "Index", "TercerasPersonas")</li>
+                        <li>@Html.ActionLink("Contratos", "Index", "Contrato")</li>
+                        <li>@Html.ActionLink("Modelos", "Index", "Modelos")</li>
+                        <li>@Html.ActionLink("Localizacion", "Index", "Localizacion")</li>
+                        <li>@Html.ActionLink("Artículos", "Index", "Articulo")</li>
+                        <li>@Html.ActionLink("Tipo de contrato", "Index", "TipoContrato")</li>
+                        <li>@Html.ActionLink("Relaciones", "Index", "Relacion")</li>
+                    }
+                    
+                    @if (@User.IsInRole("Miembro"))
+                    { 
+                        <li>@Html.ActionLink("Artículos", "Index", "Articulo")</li>
+                        <li>@Html.ActionLink("Contratos", "Index", "Contrato")</li>
+                        <li>@Html.ActionLink("Modelos", "Index", "Modelos")</li>
+                    }   
+                  
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; Team #1 - Administracion de servicios en red.</p>
+        </footer>
+    </div>
+
+   
+</body>
+</html>

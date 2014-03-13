@@ -1,0 +1,113 @@
+﻿@model Inventarios.Models.Articulos
+
+@{
+    ViewBag.Title = "Agregar";
+}
+
+<h2>Agregar</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Articulos</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdArticulo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdArticulo)
+                @Html.ValidationMessageFor(model => model.IdArticulo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodigoStatus, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CodigoStatus)
+                @Html.ValidationMessageFor(model => model.CodigoStatus)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdLocalizacion, "Localizacion", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdLocalizacion", String.Empty)
+                @Html.ValidationMessageFor(model => model.IdLocalizacion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaAdquisicion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaAdquisicion)
+                @Html.ValidationMessageFor(model => model.FechaAdquisicion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaUltimoMovimiento, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaUltimoMovimiento)
+                @Html.ValidationMessageFor(model => model.FechaUltimoMovimiento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OtrosDetalles, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OtrosDetalles)
+                @Html.ValidationMessageFor(model => model.OtrosDetalles)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdModelo, "Modelo", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdModelo", String.Empty)
+                @Html.ValidationMessageFor(model => model.IdModelo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdPersonal, "Asignado a", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdPersonal", String.Empty)
+                @Html.ValidationMessageFor(model => model.IdPersonal)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdProveedor, "Proveedor", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdProveedor", String.Empty)
+                @Html.ValidationMessageFor(model => model.IdProveedor)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CostoAdquisicion, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CostoAdquisicion)
+                @Html.ValidationMessageFor(model => model.CostoAdquisicion)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Agregar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Regresar al listado", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

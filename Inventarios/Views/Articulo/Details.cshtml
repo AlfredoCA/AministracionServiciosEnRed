@@ -1,0 +1,98 @@
+﻿@model Inventarios.Models.Articulos
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Articulos</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaAdquisicion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaAdquisicion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaUltimoMovimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaUltimoMovimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtrosDetalles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtrosDetalles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostoAdquisicion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostoAdquisicion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Localizaciones.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Localizaciones.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelos.Fabricante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelos.Fabricante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personals.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personals.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TercerasPersonas.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TercerasPersonas.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+<<<<<<< HEAD
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdArticulo }) |
+    @Html.ActionLink("Regresar al listado", "Index")
+=======
+    @if (@User.IsInRole("Administrador")) 
+    {
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IdArticulo }) 
+    }
+    @Html.ActionLink(" Regresar al listado ", "Index")
+>>>>>>> Ultimos ajustes
+</p>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Inventarios.Models.Articulos>
+
+@{
+    ViewBag.Title = "Articulos";
+}
+
+<h2>Articulos</h2>
+
+<p>
+       @Html.ActionLink("Agregar nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Identificador
+        </th>
+        <th>
+            Modelo
+        </th>
+        <th>
+            Persona asignada
+        </th>
+        <th>
+            Ubicacion
+        </th>
+        <th>
+            Status
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdArticulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modelos.VistaModelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personals.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Localizaciones.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoStatus)
+        </td>
+        <td>
+<<<<<<< HEAD
+            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
+=======
+
+            @if (@User.IsInRole("Administrador")) 
+>>>>>>> Ultimos ajustes
+            {
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdArticulo })
+            }
+
+<<<<<<< HEAD
+            @Html.ActionLink("| Detalles", "Details", new { id = item.IdArticulo }) |
+
+            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdArticulo })
+            }
+=======
+            @Html.ActionLink(" Detalles ", "Details", new { id = item.IdArticulo })
+
+            @if (@User.IsInRole("Administrador"))
+            {
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdArticulo })
+            }
+
+>>>>>>> Ultimos ajustes
+        </td>
+    </tr>
+}
+
+</table>

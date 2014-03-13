@@ -1,0 +1,73 @@
+﻿@model Inventarios.Models.Contratos
+
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Agregar</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Contratos</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdArticulo, "Articulo", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdArticulo", String.Empty)
+                @Html.ValidationMessageFor(model => model.IdArticulo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTerceraPersona, "Contraparte", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdTerceraPersona", String.Empty)
+                @Html.ValidationMessageFor(model => model.IdTerceraPersona)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTipoContrato, "Tipo de contrato", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdTipoContrato", String.Empty)
+                @Html.ValidationMessageFor(model => model.IdTipoContrato)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FechaContrato, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaContrato)
+                @Html.ValidationMessageFor(model => model.FechaContrato)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Detalles, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Detalles)
+                @Html.ValidationMessageFor(model => model.Detalles)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Agregar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Regresar al listado", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Inventarios.Models.Contratos>
+
+@{
+    ViewBag.Title = "Contratos";
+}
+
+<h2>Contratos</h2>
+
+<p>
+            @if (@User.IsInRole("Administrador")) 
+            {
+                @Html.ActionLink("Agregar nuevo", "Create")
+            }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Articulo
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaContrato)
+        </th>        
+        <th>
+            Contraparte
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoContrato.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalles)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulos.VistaArticulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaContrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TercerasPersonas.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoContrato.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalles)
+        </td>
+        <td>
+<<<<<<< HEAD
+            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
+=======
+            @if (@User.IsInRole("Administrador")) 
+>>>>>>> Ultimos ajustes
+            {
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdContrato })
+            }
+            
+<<<<<<< HEAD
+            @Html.ActionLink("| Detalles", "Details", new { id=item.IdContrato }) |
+
+            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
+=======
+            @Html.ActionLink(" Detalles ", "Details", new { id=item.IdContrato })
+
+            @if (@User.IsInRole("Administrador")) 
+>>>>>>> Ultimos ajustes
+            {
+                @Html.ActionLink("Eliminar", "Delete", new { id=item.IdContrato })
+            }
+        </td>
+    </tr>
+}
+
+</table>
