@@ -17,7 +17,7 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdArticulo1, "Articulo 1:", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdArticulo1, "IdArticulo1", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdArticulo1", String.Empty)
                 @Html.ValidationMessageFor(model => model.IdArticulo1)
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IdArticulo2, "Articulo 2:", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IdArticulo2, "IdArticulo2", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("IdArticulo2", String.Empty)
                 @Html.ValidationMessageFor(model => model.IdArticulo2)

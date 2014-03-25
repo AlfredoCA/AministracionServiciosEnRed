@@ -23,34 +23,21 @@
                 @Html.ActionLink("Inventario", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-<<<<<<< HEAD
-                <ul class="nav navbar-nav">
-                    @if (ViewContext.HttpContext.User.IsInRole("Administrador")) {
-                        <li>@Html.ActionLink("Personal", "Index", "Personal")</li>
-                        <li>@Html.ActionLink("Departamentos", "Index", "Departamentos")</li>
-                        <li>@Html.ActionLink("Tipos de compañía", "Index", "TipoCompania")</li>
-                        <li>@Html.ActionLink("Tipos de articulo", "Index", "TipoArticulo")</li>
-                        <li>@Html.ActionLink("Terceros", "Index", "TercerasPersonas")</li>
-                        <li>@Html.ActionLink("Contratos", "Index", "Contrato")</li>
-                        <li>@Html.ActionLink("Modelos", "Index", "Modelos")</li>
-                        <li>@Html.ActionLink("Localizacion", "Index", "Localizacion")</li>
-                        <li>@Html.ActionLink("Articulos", "Index", "Articulo")</li>
-                        <li>@Html.ActionLink("Tipo de contrato", "Index", "TipoContrato")</li>
-                    }
-                    
-                    @if (ViewContext.HttpContext.User.IsInRole("Miembros"))
-                    {
-                        <li>@Html.ActionLink("Articulos", "Index", "Articulo")</li>
-                        <li>@Html.ActionLink("Contratos", "Index", "Contrato")</li>
-                        <li>@Html.ActionLink("Modelos", "Index", "Modelos")</li>
-                    }
-
-                </ul>
-=======
->>>>>>> Ultimos ajustes
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="navbar-text">Bienvenido <b>@User.Identity.Name</b>!</li>
+                    <li class="navbar-text">Bienvenido <b>@User.Identity.Name</b>! <li /> 
                 </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Cambiar usuario", "SignInAsDifferentUser")</li>     
+                </ul>
+
+                @if(@User.IsInRole("Administrador"))
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Control de usuarios","Index", "Usuarios")</li>
+                    </ul>
+                }
+
                 <ul class="nav navbar-nav">  
                 
                      @if(@User.IsInRole("Administrador"))
@@ -77,6 +64,9 @@
                   
                 </ul>
                 
+                
+                    
+
             </div>
         </div>
     </div>

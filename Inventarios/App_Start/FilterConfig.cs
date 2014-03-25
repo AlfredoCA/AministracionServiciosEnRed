@@ -9,5 +9,8 @@ namespace Inventarios
         {
             filters.Add(new HandleErrorAttribute());
         }
+
+
+
     }
 }

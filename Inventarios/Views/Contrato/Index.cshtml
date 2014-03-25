@@ -50,24 +50,14 @@
             @Html.DisplayFor(modelItem => item.Detalles)
         </td>
         <td>
-<<<<<<< HEAD
-            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
-=======
             @if (@User.IsInRole("Administrador")) 
->>>>>>> Ultimos ajustes
             {
                 @Html.ActionLink("Editar", "Edit", new { id=item.IdContrato })
             }
             
-<<<<<<< HEAD
-            @Html.ActionLink("| Detalles", "Details", new { id=item.IdContrato }) |
-
-            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
-=======
             @Html.ActionLink(" Detalles ", "Details", new { id=item.IdContrato })
 
             @if (@User.IsInRole("Administrador")) 
->>>>>>> Ultimos ajustes
             {
                 @Html.ActionLink("Eliminar", "Delete", new { id=item.IdContrato })
             }

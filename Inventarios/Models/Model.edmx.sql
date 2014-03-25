@@ -2,13 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
-<<<<<<< HEAD
--- Date Created: 02/28/2014 01:30:49
--- Generated from EDMX file: C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\Models\Model.edmx
-=======
--- Date Created: 03/06/2014 18:48:32
+-- Date Created: 03/12/2014 19:27:35
 -- Generated from EDMX file: C:\Users\Equipo\Desktop\Administracion\Inventarios\Models\Model.edmx
->>>>>>> Ultimos ajustes
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -37,11 +32,20 @@ GO
 IF OBJECT_ID(N'[dbo].[FK__Contratos__IdTip__42E1EEFE]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Contratos] DROP CONSTRAINT [FK__Contratos__IdTip__42E1EEFE];
 GO
+IF OBJECT_ID(N'[dbo].[FK_DepartamentoPersonal]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Personals] DROP CONSTRAINT [FK_DepartamentoPersonal];
+GO
 IF OBJECT_ID(N'[dbo].[FK__TercerasP__IdTip__2BFE89A6]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TercerasPersonas] DROP CONSTRAINT [FK__TercerasP__IdTip__2BFE89A6];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosPersonals]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_ArticulosPersonals];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ModelosTipoArticulos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Modelos] DROP CONSTRAINT [FK_ModelosTipoArticulos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArticulosTercerasPersonas]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_ArticulosTercerasPersonas];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosRelacion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RelacionSet] DROP CONSTRAINT [FK_ArticulosRelacion];
@@ -49,14 +53,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosRelacion1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RelacionSet] DROP CONSTRAINT [FK_ArticulosRelacion1];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ArticulosTercerasPersonas]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Articulos] DROP CONSTRAINT [FK_ArticulosTercerasPersonas];
-GO
-IF OBJECT_ID(N'[dbo].[FK_DepartamentoPersonal]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Personals] DROP CONSTRAINT [FK_DepartamentoPersonal];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ModelosTipoArticulos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Modelos] DROP CONSTRAINT [FK_ModelosTipoArticulos];
+IF OBJECT_ID(N'[dbo].[FK_DepartamentosLocalizaciones]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Departamentos] DROP CONSTRAINT [FK_DepartamentosLocalizaciones];
 GO
 
 -- --------------------------------------------------
@@ -81,9 +79,6 @@ GO
 IF OBJECT_ID(N'[dbo].[Personals]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Personals];
 GO
-IF OBJECT_ID(N'[dbo].[RelacionSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[RelacionSet];
-GO
 IF OBJECT_ID(N'[dbo].[TercerasPersonas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TercerasPersonas];
 GO
@@ -95,6 +90,9 @@ IF OBJECT_ID(N'[dbo].[TipoCompania]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[TipoContrato]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TipoContrato];
+GO
+IF OBJECT_ID(N'[dbo].[RelacionSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RelacionSet];
 GO
 
 -- --------------------------------------------------

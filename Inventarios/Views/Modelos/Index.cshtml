@@ -38,24 +38,14 @@
             @Html.DisplayFor(modelItem => item.TipoArticulos.Descripcion)
         </td>
         <td>
-<<<<<<< HEAD
-            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
-=======
             @if (@User.IsInRole("Administrador")) 
->>>>>>> Ultimos ajustes
             {
                 @Html.ActionLink("Editar", "Edit", new { id = item.IdModelo })
             }
 
-<<<<<<< HEAD
-            @Html.ActionLink("| Detalles", "Details", new { id = item.IdModelo }) |
-
-            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
-=======
             @Html.ActionLink(" Detalles ", "Details", new { id = item.IdModelo })
 
             @if (@User.IsInRole("Administrador")) 
->>>>>>> Ultimos ajustes
             {
                 @Html.ActionLink("Eliminar", "Delete", new { id = item.IdModelo })
             }

@@ -24,13 +24,24 @@
             </div>
         </div>
 
+        
         <div class="form-group">
             @Html.LabelFor(model => model.CodigoStatus, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CodigoStatus)
-                @Html.ValidationMessageFor(model => model.CodigoStatus)
+                @Html.DropDownListFor(model => model.CodigoStatus, new SelectList(
+                  new List<Object>{
+                       new { value = 1 , text = "Funciona"  },
+                       new { value = 2 , text = "No funciona" },
+                       new { value = 3 , text = "En mantenimiento"}
+                    },
+                  "value",
+                  "text",
+                   2))
             </div>
+
+            
         </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.IdLocalizacion, "Localizacion", new { @class = "control-label col-md-2" })

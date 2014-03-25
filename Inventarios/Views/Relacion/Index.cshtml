@@ -1,23 +1,23 @@
 ﻿@model IEnumerable<Inventarios.Models.Relacion>
 
 @{
-    ViewBag.Title = "Relaciones";
+    ViewBag.Title = "Index";
     List<string> relaciones = new List<string>();
     List<string> items = new List<string>();
 }
 
-<h2>Relaciones</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Agregar nuevo", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            Articulo
+            @Html.DisplayNameFor(model => model.Articulos1.OtrosDetalles)
         </th>
         <th>
-            Articulo
+            @Html.DisplayNameFor(model => model.Articulos2.OtrosDetalles)
         </th>
         <th></th>
     </tr>
@@ -25,13 +25,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Articulos1.VistaArticulo)
+            @Html.DisplayFor(modelItem => item.Articulos1.OtrosDetalles)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Articulos2.VistaArticulo)
+            @Html.DisplayFor(modelItem => item.Articulos2.OtrosDetalles)
         </td>
         <td>
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdRelacion })
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdRelacion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdRelacion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdRelacion })
         </td>
 
         @{
@@ -164,5 +166,5 @@
 
 </script>
 
-<input type="button" onclick="apachurrado();" value="Reacomodar" />
+<input type="button" onclick="apachurrado();" value="Resaltar" />
 

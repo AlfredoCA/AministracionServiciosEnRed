@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.IdArticulo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Modelos.VistaModelo)
+            @Html.DisplayFor(modelItem => item.Modelos.Fabricante)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Personals.Nombre)
@@ -44,27 +44,33 @@
             @Html.DisplayFor(modelItem => item.Localizaciones.Direccion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CodigoStatus)
+            @if (item.CodigoStatus == 1)
+            {
+                @Html.Raw("Funciona");
+            }
+            else
+            {
+                if (item.CodigoStatus == 2)
+                {
+                    @Html.Raw("No funciona");
+                }
+                else
+                {
+                    if (item.CodigoStatus == 2)
+                    {
+                        @Html.Raw("En mantenimiento");
+                    }   
+                }
+            }
+ 
         </td>
         <td>
-<<<<<<< HEAD
-            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
-=======
 
             @if (@User.IsInRole("Administrador")) 
->>>>>>> Ultimos ajustes
             {
                 @Html.ActionLink("Editar", "Edit", new { id = item.IdArticulo })
             }
 
-<<<<<<< HEAD
-            @Html.ActionLink("| Detalles", "Details", new { id = item.IdArticulo }) |
-
-            @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
-            {
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdArticulo })
-            }
-=======
             @Html.ActionLink(" Detalles ", "Details", new { id = item.IdArticulo })
 
             @if (@User.IsInRole("Administrador"))
@@ -72,7 +78,6 @@
                 @Html.ActionLink("Eliminar", "Delete", new { id = item.IdArticulo })
             }
 
->>>>>>> Ultimos ajustes
         </td>
     </tr>
 }

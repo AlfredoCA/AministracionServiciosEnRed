@@ -85,14 +85,9 @@
     </dl>
 </div>
 <p>
-<<<<<<< HEAD
-    @Html.ActionLink("Editar", "Edit", new { id = Model.IdArticulo }) |
-    @Html.ActionLink("Regresar al listado", "Index")
-=======
     @if (@User.IsInRole("Administrador")) 
     {
         @Html.ActionLink("Editar", "Edit", new { id = Model.IdArticulo }) 
     }
     @Html.ActionLink(" Regresar al listado ", "Index")
->>>>>>> Ultimos ajustes
 </p>
