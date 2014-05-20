@@ -1,9 +1,9 @@
 
 -- --------------------------------------------------
--- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/12/2014 19:27:35
--- Generated from EDMX file: C:\Users\Equipo\Desktop\Administracion\Inventarios\Models\Model.edmx
+-- Date Created: 03/25/2014 11:19:22
+-- Generated from EDMX file: C:\Administracion\Inventarios\Models\Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -52,9 +52,6 @@ IF OBJECT_ID(N'[dbo].[FK_ArticulosRelacion]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosRelacion1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RelacionSet] DROP CONSTRAINT [FK_ArticulosRelacion1];
-GO
-IF OBJECT_ID(N'[dbo].[FK_DepartamentosLocalizaciones]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Departamentos] DROP CONSTRAINT [FK_DepartamentosLocalizaciones];
 GO
 
 -- --------------------------------------------------

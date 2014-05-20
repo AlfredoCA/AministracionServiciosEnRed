@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cmdbModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Articulos">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.Articulos)">
+        <MappingFragment StoreEntitySet="Articulos">
+          <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+          <ScalarProperty Name="CodigoStatus" ColumnName="CodigoStatus" />
+          <ScalarProperty Name="IdLocalizacion" ColumnName="IdLocalizacion" />
+          <ScalarProperty Name="FechaAdquisicion" ColumnName="FechaAdquisicion" />
+          <ScalarProperty Name="FechaUltimoMovimiento" ColumnName="FechaUltimoMovimiento" />
+          <ScalarProperty Name="OtrosDetalles" ColumnName="OtrosDetalles" />
+          <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+          <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="CostoAdquisicion" ColumnName="CostoAdquisicion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contratos">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.Contratos)">
+        <MappingFragment StoreEntitySet="Contratos">
+          <ScalarProperty Name="IdContrato" ColumnName="IdContrato" />
+          <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+          <ScalarProperty Name="IdTerceraPersona" ColumnName="IdTerceraPersona" />
+          <ScalarProperty Name="IdTipoContrato" ColumnName="IdTipoContrato" />
+          <ScalarProperty Name="FechaContrato" ColumnName="FechaContrato" />
+          <ScalarProperty Name="Detalles" ColumnName="Detalles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentos">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.Departamentos)">
+        <MappingFragment StoreEntitySet="Departamentos">
+          <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Localizaciones">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.Localizaciones)">
+        <MappingFragment StoreEntitySet="Localizaciones">
+          <ScalarProperty Name="IdLocalizacion" ColumnName="IdLocalizacion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Detalles" ColumnName="Detalles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modelos">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.Modelos)">
+        <MappingFragment StoreEntitySet="Modelos">
+          <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+          <ScalarProperty Name="Fabricante" ColumnName="Fabricante" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Especificaciones" ColumnName="Especificaciones" />
+          <ScalarProperty Name="IdTipoArticulo" ColumnName="IdTipoArticulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personals">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.Personals)">
+        <MappingFragment StoreEntitySet="Personals">
+          <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+          <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TercerasPersonas">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.TercerasPersonas)">
+        <MappingFragment StoreEntitySet="TercerasPersonas">
+          <ScalarProperty Name="IdTerceraPersona" ColumnName="IdTerceraPersona" />
+          <ScalarProperty Name="IdTipoCompania" ColumnName="IdTipoCompania" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Rfc" ColumnName="Rfc" />
+          <ScalarProperty Name="Detalles" ColumnName="Detalles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoArticulos">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.TipoArticulos)">
+        <MappingFragment StoreEntitySet="TipoArticulos">
+          <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoCompania">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.TipoCompania)">
+        <MappingFragment StoreEntitySet="TipoCompania">
+          <ScalarProperty Name="IdTipoCompania" ColumnName="IdTipoCompania" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoContrato">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.TipoContrato)">
+        <MappingFragment StoreEntitySet="TipoContrato">
+          <ScalarProperty Name="IdTipoContrato" ColumnName="IdTipoContrato" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelacionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(cmdbModel.Relacion)">
+        <MappingFragment StoreEntitySet="RelacionSet">
+          <ScalarProperty Name="IdRelacion" ColumnName="IdRelacion" />
+          <ScalarProperty Name="IdArticulo1" ColumnName="IdArticulo1" />
+          <ScalarProperty Name="IdArticulo2" ColumnName="IdArticulo2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

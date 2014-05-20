@@ -1,0 +1,247 @@
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\Inventarios.dll.config
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\Inventarios.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\Inventarios.pdb
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\Antlr3.Runtime.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\EntityFramework.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\Newtonsoft.Json.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.Helpers.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.Mvc.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.Optimization.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.Razor.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.WebPages.Deployment.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.WebPages.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.WebPages.Razor.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\WebGrease.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\EntityFramework.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.Helpers.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.Mvc.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.Optimization.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.Razor.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.WebPages.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.WebPages.Deployment.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\System.Web.WebPages.Razor.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\Newtonsoft.Json.xml
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\bin\Antlr3.Runtime.pdb
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\obj\Debug\Inventarios.dll
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\obj\Debug\Inventarios.pdb
+c:\users\juancarlos\documents\visual studio 2013\Projects\Inventarios\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\Inventarios.dll.config
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\Inventarios.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\Inventarios.pdb
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\Antlr3.Runtime.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\EntityFramework.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\Newtonsoft.Json.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.Helpers.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.Mvc.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.Optimization.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.Razor.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.WebPages.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.WebPages.Razor.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\WebGrease.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\EntityFramework.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.Helpers.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.Mvc.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.Optimization.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.Razor.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.WebPages.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\System.Web.WebPages.Razor.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\Newtonsoft.Json.xml
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\bin\Antlr3.Runtime.pdb
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\obj\Debug\Inventarios.dll
+C:\Users\NetbookManolo\Documents\GitHub\Administracion\Inventarios\obj\Debug\Inventarios.pdb
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\Inventarios.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\Inventarios.pdb
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\Antlr3.Runtime.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\EntityFramework.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\Newtonsoft.Json.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.Helpers.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.Mvc.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.Optimization.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.Razor.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.WebPages.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.WebPages.Razor.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\WebGrease.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\EntityFramework.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.Helpers.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.Mvc.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.Optimization.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.Razor.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.WebPages.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\System.Web.WebPages.Razor.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\Newtonsoft.Json.xml
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\bin\Antlr3.Runtime.pdb
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\obj\Debug\Inventarios.dll
+C:\Users\Equipo\Desktop\APCR\Administracion\Inventarios\obj\Debug\Inventarios.pdb
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\Inventarios.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\Inventarios.pdb
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\Antlr3.Runtime.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\EntityFramework.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\Newtonsoft.Json.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.Helpers.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.Mvc.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.Optimization.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.Razor.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.WebPages.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.WebPages.Razor.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\WebGrease.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\EntityFramework.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.Helpers.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.Mvc.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.Optimization.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.Razor.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.WebPages.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\System.Web.WebPages.Razor.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\Newtonsoft.Json.xml
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\bin\Antlr3.Runtime.pdb
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\obj\Debug\Inventarios.dll
+C:\Users\Equipo\Desktop\APCR\Administracion - Copy\Inventarios\obj\Debug\Inventarios.pdb
+C:\Administracion\Inventarios\bin\Inventarios.dll
+C:\Administracion\Inventarios\bin\Inventarios.pdb
+C:\Administracion\Inventarios\bin\Antlr3.Runtime.dll
+C:\Administracion\Inventarios\bin\EntityFramework.dll
+C:\Administracion\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+C:\Administracion\Inventarios\bin\Newtonsoft.Json.dll
+C:\Administracion\Inventarios\bin\System.Web.Helpers.dll
+C:\Administracion\Inventarios\bin\System.Web.Mvc.dll
+C:\Administracion\Inventarios\bin\System.Web.Optimization.dll
+C:\Administracion\Inventarios\bin\System.Web.Razor.dll
+C:\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.dll
+C:\Administracion\Inventarios\bin\System.Web.WebPages.dll
+C:\Administracion\Inventarios\bin\System.Web.WebPages.Razor.dll
+C:\Administracion\Inventarios\bin\WebGrease.dll
+C:\Administracion\Inventarios\bin\EntityFramework.xml
+C:\Administracion\Inventarios\bin\System.Web.Helpers.xml
+C:\Administracion\Inventarios\bin\System.Web.Mvc.xml
+C:\Administracion\Inventarios\bin\System.Web.Optimization.xml
+C:\Administracion\Inventarios\bin\System.Web.Razor.xml
+C:\Administracion\Inventarios\bin\System.Web.WebPages.xml
+C:\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.xml
+C:\Administracion\Inventarios\bin\System.Web.WebPages.Razor.xml
+C:\Administracion\Inventarios\bin\Newtonsoft.Json.xml
+C:\Administracion\Inventarios\bin\Antlr3.Runtime.pdb
+C:\Administracion\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\Administracion\Inventarios\obj\Debug\Inventarios.dll
+C:\Administracion\Inventarios\obj\Debug\Inventarios.pdb
+C:\FIN\Administracion\Inventarios\bin\Inventarios.dll.config
+C:\FIN\Administracion\Inventarios\bin\Inventarios.dll
+C:\FIN\Administracion\Inventarios\bin\Inventarios.pdb
+C:\FIN\Administracion\Inventarios\bin\Antlr3.Runtime.dll
+C:\FIN\Administracion\Inventarios\bin\EntityFramework.dll
+C:\FIN\Administracion\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+C:\FIN\Administracion\Inventarios\bin\Newtonsoft.Json.dll
+C:\FIN\Administracion\Inventarios\bin\System.Web.Helpers.dll
+C:\FIN\Administracion\Inventarios\bin\System.Web.Mvc.dll
+C:\FIN\Administracion\Inventarios\bin\System.Web.Optimization.dll
+C:\FIN\Administracion\Inventarios\bin\System.Web.Razor.dll
+C:\FIN\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.dll
+C:\FIN\Administracion\Inventarios\bin\System.Web.WebPages.dll
+C:\FIN\Administracion\Inventarios\bin\System.Web.WebPages.Razor.dll
+C:\FIN\Administracion\Inventarios\bin\WebGrease.dll
+C:\FIN\Administracion\Inventarios\bin\EntityFramework.xml
+C:\FIN\Administracion\Inventarios\bin\System.Web.Helpers.xml
+C:\FIN\Administracion\Inventarios\bin\System.Web.Mvc.xml
+C:\FIN\Administracion\Inventarios\bin\System.Web.Optimization.xml
+C:\FIN\Administracion\Inventarios\bin\System.Web.Razor.xml
+C:\FIN\Administracion\Inventarios\bin\System.Web.WebPages.xml
+C:\FIN\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.xml
+C:\FIN\Administracion\Inventarios\bin\System.Web.WebPages.Razor.xml
+C:\FIN\Administracion\Inventarios\bin\Newtonsoft.Json.xml
+C:\FIN\Administracion\Inventarios\bin\Antlr3.Runtime.pdb
+C:\FIN\Administracion\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\FIN\Administracion\Inventarios\obj\Debug\Inventarios.dll
+C:\FIN\Administracion\Inventarios\obj\Debug\Inventarios.pdb
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\Inventarios.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\Inventarios.pdb
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\Antlr3.Runtime.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\EntityFramework.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\Newtonsoft.Json.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.Helpers.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.Mvc.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.Optimization.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.Razor.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.WebPages.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.WebPages.Razor.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\WebGrease.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\EntityFramework.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.Helpers.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.Mvc.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.Optimization.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.Razor.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.WebPages.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\System.Web.WebPages.Razor.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\Newtonsoft.Json.xml
+C:\Users\Equipo\Desktop\Administracion\Inventarios\bin\Antlr3.Runtime.pdb
+C:\Users\Equipo\Desktop\Administracion\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\Users\Equipo\Desktop\Administracion\Inventarios\obj\Debug\Inventarios.dll
+C:\Users\Equipo\Desktop\Administracion\Inventarios\obj\Debug\Inventarios.pdb
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\Inventarios.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\Inventarios.pdb
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\Antlr3.Runtime.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\EntityFramework.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\Newtonsoft.Json.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.Helpers.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.Mvc.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.Optimization.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.Razor.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.WebPages.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.WebPages.Razor.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\WebGrease.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\EntityFramework.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.Helpers.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.Mvc.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.Optimization.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.Razor.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.WebPages.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\System.Web.WebPages.Razor.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\Newtonsoft.Json.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\bin\Antlr3.Runtime.pdb
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\obj\Debug\Inventarios.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion\Inventarios\obj\Debug\Inventarios.pdb
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\Inventarios.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\Inventarios.pdb
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\Antlr3.Runtime.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\EntityFramework.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\Newtonsoft.Json.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.Helpers.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.Mvc.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.Optimization.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.Razor.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.WebPages.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.WebPages.Razor.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\WebGrease.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\EntityFramework.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.Helpers.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.Mvc.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.Optimization.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.Razor.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.WebPages.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\System.Web.WebPages.Razor.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\Newtonsoft.Json.xml
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\bin\Antlr3.Runtime.pdb
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\obj\Debug\Inventarios.csprojResolveAssemblyReference.cache
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\obj\Debug\Inventarios.dll
+C:\Users\Equipo\Documents\ALFREDO\ADMIN DE SERVICIOS EN RED\Administracion - Copy - Copy\Inventarios\obj\Debug\Inventarios.pdb
+C:\Administracion\Inventarios\bin\Inventarios.dll.config

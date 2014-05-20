@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cmdbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="cmdbModelStoreContainer">
+    <EntitySet Name="Articulos" EntityType="cmdbModel.Store.Articulos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contratos" EntityType="cmdbModel.Store.Contratos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Departamentos" EntityType="cmdbModel.Store.Departamentos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Localizaciones" EntityType="cmdbModel.Store.Localizaciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Modelos" EntityType="cmdbModel.Store.Modelos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personals" EntityType="cmdbModel.Store.Personals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TercerasPersonas" EntityType="cmdbModel.Store.TercerasPersonas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoArticulos" EntityType="cmdbModel.Store.TipoArticulos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoCompania" EntityType="cmdbModel.Store.TipoCompania" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoContrato" EntityType="cmdbModel.Store.TipoContrato" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RelacionSet" EntityType="cmdbModel.Store.RelacionSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Articulos__IdLoc__22751F6C" Association="cmdbModel.Store.FK__Articulos__IdLoc__22751F6C">
+      <End Role="Localizaciones" EntitySet="Localizaciones" />
+      <End Role="Articulos" EntitySet="Articulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Articulos__IdMod__236943A5" Association="cmdbModel.Store.FK__Articulos__IdMod__236943A5">
+      <End Role="Modelos" EntitySet="Modelos" />
+      <End Role="Articulos" EntitySet="Articulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contratos__IdArt__40058253" Association="cmdbModel.Store.FK__Contratos__IdArt__40058253">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="Contratos" EntitySet="Contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contratos__IdTer__41EDCAC5" Association="cmdbModel.Store.FK__Contratos__IdTer__41EDCAC5">
+      <End Role="TercerasPersonas" EntitySet="TercerasPersonas" />
+      <End Role="Contratos" EntitySet="Contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contratos__IdTip__42E1EEFE" Association="cmdbModel.Store.FK__Contratos__IdTip__42E1EEFE">
+      <End Role="TipoContrato" EntitySet="TipoContrato" />
+      <End Role="Contratos" EntitySet="Contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartamentoPersonal" Association="cmdbModel.Store.FK_DepartamentoPersonal">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Personals" EntitySet="Personals" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TercerasP__IdTip__2BFE89A6" Association="cmdbModel.Store.FK__TercerasP__IdTip__2BFE89A6">
+      <End Role="TipoCompania" EntitySet="TipoCompania" />
+      <End Role="TercerasPersonas" EntitySet="TercerasPersonas" />
+    </AssociationSet>
+    <AssociationSet Name="ArticulosPersonals" Association="cmdbModel.Store.ArticulosPersonals">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="Personals" EntitySet="Personals" />
+    </AssociationSet>
+    <AssociationSet Name="ModelosTipoArticulos" Association="cmdbModel.Store.ModelosTipoArticulos">
+      <End Role="Modelos" EntitySet="Modelos" />
+      <End Role="TipoArticulos" EntitySet="TipoArticulos" />
+    </AssociationSet>
+    <AssociationSet Name="ArticulosTercerasPersonas" Association="cmdbModel.Store.ArticulosTercerasPersonas">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="TercerasPersonas" EntitySet="TercerasPersonas" />
+    </AssociationSet>
+    <AssociationSet Name="ArticulosRelacion" Association="cmdbModel.Store.ArticulosRelacion">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="Relacion" EntitySet="RelacionSet" />
+    </AssociationSet>
+    <AssociationSet Name="ArticulosRelacion1" Association="cmdbModel.Store.ArticulosRelacion1">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="Relacion" EntitySet="RelacionSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Articulos">
+    <Key>
+      <PropertyRef Name="IdArticulo" />
+    </Key>
+    <Property Name="IdArticulo" Type="int" Nullable="false" />
+    <Property Name="CodigoStatus" Type="int" Nullable="true" />
+    <Property Name="IdLocalizacion" Type="int" Nullable="true" />
+    <Property Name="FechaAdquisicion" Type="datetime" Nullable="true" />
+    <Property Name="FechaUltimoMovimiento" Type="datetime" Nullable="true" />
+    <Property Name="OtrosDetalles" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="IdModelo" Type="int" Nullable="false" />
+    <Property Name="IdPersonal" Type="int" Nullable="true" />
+    <Property Name="IdProveedor" Type="int" Nullable="false" />
+    <Property Name="CostoAdquisicion" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contratos">
+    <Key>
+      <PropertyRef Name="IdContrato" />
+    </Key>
+    <Property Name="IdContrato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdArticulo" Type="int" Nullable="false" />
+    <Property Name="IdTerceraPersona" Type="int" Nullable="false" />
+    <Property Name="IdTipoContrato" Type="int" Nullable="false" />
+    <Property Name="FechaContrato" Type="datetime" Nullable="false" />
+    <Property Name="Detalles" Type="varchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="IdDepartamento" />
+    </Key>
+    <Property Name="IdDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Localizaciones">
+    <Key>
+      <PropertyRef Name="IdLocalizacion" />
+    </Key>
+    <Property Name="IdLocalizacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="Detalles" Type="varchar" Nullable="true" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="Modelos">
+    <Key>
+      <PropertyRef Name="IdModelo" />
+    </Key>
+    <Property Name="IdModelo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fabricante" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="Modelo" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="Especificaciones" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="IdTipoArticulo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personals">
+    <Key>
+      <PropertyRef Name="IdPersonal" />
+    </Key>
+    <Property Name="IdPersonal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Puesto" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="IdDepartamento" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TercerasPersonas">
+    <Key>
+      <PropertyRef Name="IdTerceraPersona" />
+    </Key>
+    <Property Name="IdTerceraPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoCompania" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Direccion" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Rfc" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="Detalles" Type="varchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TipoArticulos">
+    <Key>
+      <PropertyRef Name="IdTipo" />
+    </Key>
+    <Property Name="IdTipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TipoCompania">
+    <Key>
+      <PropertyRef Name="IdTipoCompania" />
+    </Key>
+    <Property Name="IdTipoCompania" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TipoContrato">
+    <Key>
+      <PropertyRef Name="IdTipoContrato" />
+    </Key>
+    <Property Name="IdTipoContrato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RelacionSet">
+    <Key>
+      <PropertyRef Name="IdRelacion" />
+    </Key>
+    <Property Name="IdArticulo1" Type="int" Nullable="false" />
+    <Property Name="IdArticulo2" Type="int" Nullable="false" />
+    <Property Name="IdRelacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Articulos__IdLoc__22751F6C">
+    <End Role="Localizaciones" Type="cmdbModel.Store.Localizaciones" Multiplicity="0..1" />
+    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localizaciones">
+        <PropertyRef Name="IdLocalizacion" />
+      </Principal>
+      <Dependent Role="Articulos">
+        <PropertyRef Name="IdLocalizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Articulos__IdMod__236943A5">
+    <End Role="Modelos" Type="cmdbModel.Store.Modelos" Multiplicity="1" />
+    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelos">
+        <PropertyRef Name="IdModelo" />
+      </Principal>
+      <Dependent Role="Articulos">
+        <PropertyRef Name="IdModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contratos__IdArt__40058253">
+    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="1" />
+    <End Role="Contratos" Type="cmdbModel.Store.Contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulos">
+        <PropertyRef Name="IdArticulo" />
+      </Principal>
+      <Dependent Role="Contratos">
+        <PropertyRef Name="IdArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contratos__IdTer__41EDCAC5">
+    <End Role="TercerasPersonas" Type="cmdbModel.Store.TercerasPersonas" Multiplicity="1" />
+    <End Role="Contratos" Type="cmdbModel.Store.Contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TercerasPersonas">
+        <PropertyRef Name="IdTerceraPersona" />
+      </Principal>
+      <Dependent Role="Contratos">
+        <PropertyRef Name="IdTerceraPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contratos__IdTip__42E1EEFE">
+    <End Role="TipoContrato" Type="cmdbModel.Store.TipoContrato" Multiplicity="1" />
+    <End Role="Contratos" Type="cmdbModel.Store.Contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoContrato">
+        <PropertyRef Name="IdTipoContrato" />
+      </Principal>
+      <Dependent Role="Contratos">
+        <PropertyRef Name="IdTipoContrato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartamentoPersonal">
+    <End Role="Departamentos" Type="cmdbModel.Store.Departamentos" Multiplicity="1" />
+    <End Role="Personals" Type="cmdbModel.Store.Personals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="IdDepartamento" />
+      </Principal>
+      <Dependent Role="Personals">
+        <PropertyRef Name="IdDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TercerasP__IdTip__2BFE89A6">
+    <End Role="TipoCompania" Type="cmdbModel.Store.TipoCompania" Multiplicity="1" />
+    <End Role="TercerasPersonas" Type="cmdbModel.Store.TercerasPersonas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCompania">
+        <PropertyRef Name="IdTipoCompania" />
+      </Principal>
+      <Dependent Role="TercerasPersonas">
+        <PropertyRef Name="IdTipoCompania" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticulosPersonals">
+    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="*" />
+    <End Role="Personals" Type="cmdbModel.Store.Personals" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Personals">
+        <PropertyRef Name="IdPersonal" />
+      </Principal>
+      <Dependent Role="Articulos">
+        <PropertyRef Name="IdPersonal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ModelosTipoArticulos">
+    <End Role="Modelos" Type="cmdbModel.Store.Modelos" Multiplicity="*" />
+    <End Role="TipoArticulos" Type="cmdbModel.Store.TipoArticulos" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TipoArticulos">
+        <PropertyRef Name="IdTipo" />
+      </Principal>
+      <Dependent Role="Modelos">
+        <PropertyRef Name="IdTipoArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticulosTercerasPersonas">
+    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="*" />
+    <End Role="TercerasPersonas" Type="cmdbModel.Store.TercerasPersonas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TercerasPersonas">
+        <PropertyRef Name="IdTerceraPersona" />
+      </Principal>
+      <Dependent Role="Articulos">
+        <PropertyRef Name="IdProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticulosRelacion">
+    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="1" />
+    <End Role="Relacion" Type="cmdbModel.Store.RelacionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulos">
+        <PropertyRef Name="IdArticulo" />
+      </Principal>
+      <Dependent Role="Relacion">
+        <PropertyRef Name="IdArticulo1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticulosRelacion1">
+    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="1" />
+    <End Role="Relacion" Type="cmdbModel.Store.RelacionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulos">
+        <PropertyRef Name="IdArticulo" />
+      </Principal>
+      <Dependent Role="Relacion">
+        <PropertyRef Name="IdArticulo2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
