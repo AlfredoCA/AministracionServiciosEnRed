@@ -17,6 +17,7 @@ namespace Inventarios.Models
         public Personals()
         {
             this.Articulos = new HashSet<Articulos>();
+            this.Ticket = new HashSet<Ticket>();
         }
     
         public int IdPersonal { get; set; }
@@ -28,5 +29,6 @@ namespace Inventarios.Models
     
         public virtual Departamentos Departamentos { get; set; }
         public virtual ICollection<Articulos> Articulos { get; set; }
+        public virtual ICollection<Ticket> Ticket { get; set; }
     }
 }

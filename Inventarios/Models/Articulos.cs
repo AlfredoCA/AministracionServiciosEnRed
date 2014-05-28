@@ -19,6 +19,7 @@ namespace Inventarios.Models
             this.Contratos = new HashSet<Contratos>();
             this.Relacion = new HashSet<Relacion>();
             this.RelacionDos = new HashSet<Relacion>();
+            this.Ticket = new HashSet<Ticket>();
         }
     
         public int IdArticulo { get; set; }
@@ -39,5 +40,6 @@ namespace Inventarios.Models
         public virtual TercerasPersonas TercerasPersonas { get; set; }
         public virtual ICollection<Relacion> Relacion { get; set; }
         public virtual ICollection<Relacion> RelacionDos { get; set; }
+        public virtual ICollection<Ticket> Ticket { get; set; }
     }
 }

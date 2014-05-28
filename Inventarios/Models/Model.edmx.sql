@@ -2,9 +2,12 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/25/2014 11:19:22
--- Generated from EDMX file: C:\Administracion\Inventarios\Models\Model.edmx
+-- Date Created: 05/28/2014 12:03:53
+-- Generated from EDMX file: C:\Users\JuanCarlos\Documents\GitHub\AministracionServiciosEnRed\Inventarios\Models\Model.edmx
 -- --------------------------------------------------
+
+CREATE DATABASE [cmdb]
+GO
 
 SET QUOTED_IDENTIFIER OFF;
 GO
@@ -280,6 +283,7 @@ ADD CONSTRAINT [FK__Articulos__IdLoc__22751F6C]
     REFERENCES [dbo].[Localizaciones]
         ([IdLocalizacion])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK__Articulos__IdLoc__22751F6C'
 CREATE INDEX [IX_FK__Articulos__IdLoc__22751F6C]
@@ -294,6 +298,7 @@ ADD CONSTRAINT [FK__Articulos__IdMod__236943A5]
     REFERENCES [dbo].[Modelos]
         ([IdModelo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK__Articulos__IdMod__236943A5'
 CREATE INDEX [IX_FK__Articulos__IdMod__236943A5]
@@ -308,6 +313,7 @@ ADD CONSTRAINT [FK__Contratos__IdArt__40058253]
     REFERENCES [dbo].[Articulos]
         ([IdArticulo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK__Contratos__IdArt__40058253'
 CREATE INDEX [IX_FK__Contratos__IdArt__40058253]
@@ -322,6 +328,7 @@ ADD CONSTRAINT [FK__Contratos__IdTer__41EDCAC5]
     REFERENCES [dbo].[TercerasPersonas]
         ([IdTerceraPersona])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK__Contratos__IdTer__41EDCAC5'
 CREATE INDEX [IX_FK__Contratos__IdTer__41EDCAC5]
@@ -336,6 +343,7 @@ ADD CONSTRAINT [FK__Contratos__IdTip__42E1EEFE]
     REFERENCES [dbo].[TipoContrato]
         ([IdTipoContrato])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK__Contratos__IdTip__42E1EEFE'
 CREATE INDEX [IX_FK__Contratos__IdTip__42E1EEFE]
@@ -350,6 +358,7 @@ ADD CONSTRAINT [FK_DepartamentoPersonal]
     REFERENCES [dbo].[Departamentos]
         ([IdDepartamento])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DepartamentoPersonal'
 CREATE INDEX [IX_FK_DepartamentoPersonal]
@@ -364,6 +373,7 @@ ADD CONSTRAINT [FK__TercerasP__IdTip__2BFE89A6]
     REFERENCES [dbo].[TipoCompania]
         ([IdTipoCompania])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK__TercerasP__IdTip__2BFE89A6'
 CREATE INDEX [IX_FK__TercerasP__IdTip__2BFE89A6]
@@ -378,6 +388,7 @@ ADD CONSTRAINT [FK_ArticulosPersonals]
     REFERENCES [dbo].[Personals]
         ([IdPersonal])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ArticulosPersonals'
 CREATE INDEX [IX_FK_ArticulosPersonals]
@@ -392,6 +403,7 @@ ADD CONSTRAINT [FK_ModelosTipoArticulos]
     REFERENCES [dbo].[TipoArticulos]
         ([IdTipo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ModelosTipoArticulos'
 CREATE INDEX [IX_FK_ModelosTipoArticulos]
@@ -406,6 +418,7 @@ ADD CONSTRAINT [FK_ArticulosTercerasPersonas]
     REFERENCES [dbo].[TercerasPersonas]
         ([IdTerceraPersona])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ArticulosTercerasPersonas'
 CREATE INDEX [IX_FK_ArticulosTercerasPersonas]
@@ -420,6 +433,7 @@ ADD CONSTRAINT [FK_ArticulosRelacion]
     REFERENCES [dbo].[Articulos]
         ([IdArticulo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ArticulosRelacion'
 CREATE INDEX [IX_FK_ArticulosRelacion]
@@ -434,6 +448,7 @@ ADD CONSTRAINT [FK_ArticulosRelacion1]
     REFERENCES [dbo].[Articulos]
         ([IdArticulo])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ArticulosRelacion1'
 CREATE INDEX [IX_FK_ArticulosRelacion1]

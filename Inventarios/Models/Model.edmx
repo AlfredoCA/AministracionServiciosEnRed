@@ -338,6 +338,7 @@
           <Property Name="CostoAdquisicion" Type="Double" Nullable="false" />
           <NavigationProperty Name="Relacion" Relationship="cmdbModel.ArticulosRelacion" FromRole="Articulos" ToRole="Relacion" />
           <NavigationProperty Name="RelacionDos" Relationship="cmdbModel.ArticulosRelacion1" FromRole="Articulos" ToRole="Relacion" />
+          <NavigationProperty Name="Ticket" Relationship="cmdbModel.TicketArticulos" FromRole="Articulos" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="Contratos">
           <Key>
@@ -395,6 +396,7 @@
           <Property Name="IdDepartamento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Departamentos" Relationship="Self.FK_DepartamentoPersonal" FromRole="Personals" ToRole="Departamentos" />
           <NavigationProperty Name="Articulos" Relationship="cmdbModel.ArticulosPersonals" FromRole="Personals" ToRole="Articulos" />
+          <NavigationProperty Name="Ticket" Relationship="cmdbModel.TicketPersonals" FromRole="Personals" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="TercerasPersonas">
           <Key>
@@ -578,6 +580,15 @@
             <End Role="Articulos" EntitySet="Articulos" />
             <End Role="Relacion" EntitySet="RelacionSet" />
           </AssociationSet>
+          <EntitySet Name="TicketSet" EntityType="cmdbModel.Ticket" />
+          <AssociationSet Name="TicketArticulos" Association="cmdbModel.TicketArticulos">
+            <End Role="Ticket" EntitySet="TicketSet" />
+            <End Role="Articulos" EntitySet="Articulos" />
+          </AssociationSet>
+          <AssociationSet Name="TicketPersonals" Association="cmdbModel.TicketPersonals">
+            <End Role="Ticket" EntitySet="TicketSet" />
+            <End Role="Personals" EntitySet="Personals" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="ArticulosPersonals">
           <End Type="cmdbModel.Articulos" Role="Articulos" Multiplicity="*" />
@@ -648,6 +659,30 @@
               <PropertyRef Name="IdArticulo2" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" Nullable="false" />
+          <Property Name="Categoria" Type="String" Nullable="false" />
+          <Property Name="Prioridad" Type="String" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" />
+          <Property Name="IdCreador" Type="String" Nullable="false" />
+          <Property Name="FechaUltimaActualizacion" Type="DateTime" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Articulo" Relationship="cmdbModel.TicketArticulos" FromRole="Ticket" ToRole="Articulos" />
+          <NavigationProperty Name="Personals" Relationship="cmdbModel.TicketPersonals" FromRole="Ticket" ToRole="Personals" />
+        </EntityType>
+        <Association Name="TicketArticulos">
+          <End Type="cmdbModel.Ticket" Role="Ticket" Multiplicity="*" />
+          <End Type="cmdbModel.Articulos" Role="Articulos" Multiplicity="1" />
+        </Association>
+        <Association Name="TicketPersonals">
+          <End Type="cmdbModel.Ticket" Role="Ticket" Multiplicity="*" />
+          <End Type="cmdbModel.Personals" Role="Personals" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>

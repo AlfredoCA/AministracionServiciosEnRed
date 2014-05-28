@@ -36,5 +36,6 @@ namespace Inventarios.Models
         public DbSet<TipoCompania> TipoCompania { get; set; }
         public DbSet<TipoContrato> TipoContrato { get; set; }
         public DbSet<Relacion> RelacionSet { get; set; }
+        public DbSet<Ticket> TicketSet { get; set; }
     }
 }
