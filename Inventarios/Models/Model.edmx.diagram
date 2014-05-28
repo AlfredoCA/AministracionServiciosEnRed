@@ -31,6 +31,10 @@
         <EntityTypeShape EntityType="cmdbModel.Ticket" Width="1.5" PointX="10.5" PointY="3" />
         <AssociationConnector Association="cmdbModel.TicketArticulos" />
         <AssociationConnector Association="cmdbModel.TicketPersonals" />
+        <EntityTypeShape EntityType="cmdbModel.KnowledgeItem" Width="1.5" PointX="10.375" PointY="6.75" />
+        <AssociationConnector Association="cmdbModel.KnowledgeItemTicket" />
+        <EntityTypeShape EntityType="cmdbModel.Comentario" Width="1.5" PointX="10.375" PointY="10.25" />
+        <AssociationConnector Association="cmdbModel.ComentarioKnowledgeItem" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

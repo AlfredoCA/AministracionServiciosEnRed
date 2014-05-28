@@ -12,21 +12,23 @@ namespace Inventarios.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Ticket
+    public partial class KnowledgeItem
     {
+        public KnowledgeItem()
+        {
+            this.Ticket = new HashSet<Ticket>();
+            this.Comentario = new HashSet<Comentario>();
+        }
+    
         public int Id { get; set; }
         public string Titulo { get; set; }
-        public string Categoria { get; set; }
-        public string Prioridad { get; set; }
         public System.DateTime FechaCreacion { get; set; }
-        public string IdCreador { get; set; }
-        public System.DateTime FechaUltimaActualizacion { get; set; }
-        public System.DateTime FechaVencimiento { get; set; }
+        public System.DateTime FechaUltimaModificacion { get; set; }
+        public string Creador { get; set; }
+        public string Keywords { get; set; }
         public string Descripcion { get; set; }
-        public int KnowledgeItemId { get; set; }
     
-        public virtual Articulos Articulo { get; set; }
-        public virtual Personals Personals { get; set; }
-        public virtual KnowledgeItem KnowledgeItem { get; set; }
+        public virtual ICollection<Ticket> Ticket { get; set; }
+        public virtual ICollection<Comentario> Comentario { get; set; }
     }
 }

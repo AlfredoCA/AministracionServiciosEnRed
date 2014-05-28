@@ -2,12 +2,9 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2014 12:03:53
+-- Date Created: 05/28/2014 13:04:18
 -- Generated from EDMX file: C:\Users\JuanCarlos\Documents\GitHub\AministracionServiciosEnRed\Inventarios\Models\Model.edmx
 -- --------------------------------------------------
-
-CREATE DATABASE [cmdb]
-GO
 
 SET QUOTED_IDENTIFIER OFF;
 GO
@@ -56,6 +53,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosRelacion1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RelacionSet] DROP CONSTRAINT [FK_ArticulosRelacion1];
 GO
+IF OBJECT_ID(N'[dbo].[FK_TicketArticulos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_TicketArticulos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TicketPersonals]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_TicketPersonals];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -93,6 +96,9 @@ IF OBJECT_ID(N'[dbo].[TipoContrato]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[RelacionSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RelacionSet];
+GO
+IF OBJECT_ID(N'[dbo].[TicketSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TicketSet];
 GO
 
 -- --------------------------------------------------
@@ -202,6 +208,45 @@ CREATE TABLE [dbo].[RelacionSet] (
 );
 GO
 
+-- Creating table 'TicketSet'
+CREATE TABLE [dbo].[TicketSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Titulo] nvarchar(max)  NOT NULL,
+    [Categoria] nvarchar(max)  NOT NULL,
+    [Prioridad] nvarchar(max)  NOT NULL,
+    [FechaCreacion] datetime  NOT NULL,
+    [IdCreador] nvarchar(max)  NOT NULL,
+    [FechaUltimaActualizacion] datetime  NOT NULL,
+    [FechaVencimiento] datetime  NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [KnowledgeItemId] int  NOT NULL,
+    [Articulo_IdArticulo] int  NOT NULL,
+    [Personals_IdPersonal] int  NOT NULL
+);
+GO
+
+-- Creating table 'KnowledgeItemSet'
+CREATE TABLE [dbo].[KnowledgeItemSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Titulo] nvarchar(max)  NOT NULL,
+    [FechaCreacion] datetime  NOT NULL,
+    [FechaUltimaModificacion] datetime  NOT NULL,
+    [Creador] nvarchar(max)  NOT NULL,
+    [Keywords] nvarchar(max)  NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'ComentarioSet'
+CREATE TABLE [dbo].[ComentarioSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Texto] nvarchar(max)  NOT NULL,
+    [Creador] nvarchar(max)  NOT NULL,
+    [Fecha] datetime  NOT NULL,
+    [KnowledgeItem_Id] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -270,6 +315,24 @@ GO
 ALTER TABLE [dbo].[RelacionSet]
 ADD CONSTRAINT [PK_RelacionSet]
     PRIMARY KEY CLUSTERED ([IdRelacion] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'TicketSet'
+ALTER TABLE [dbo].[TicketSet]
+ADD CONSTRAINT [PK_TicketSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'KnowledgeItemSet'
+ALTER TABLE [dbo].[KnowledgeItemSet]
+ADD CONSTRAINT [PK_KnowledgeItemSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'ComentarioSet'
+ALTER TABLE [dbo].[ComentarioSet]
+ADD CONSTRAINT [PK_ComentarioSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -454,6 +517,66 @@ GO
 CREATE INDEX [IX_FK_ArticulosRelacion1]
 ON [dbo].[RelacionSet]
     ([IdArticulo2]);
+GO
+
+-- Creating foreign key on [Articulo_IdArticulo] in table 'TicketSet'
+ALTER TABLE [dbo].[TicketSet]
+ADD CONSTRAINT [FK_TicketArticulos]
+    FOREIGN KEY ([Articulo_IdArticulo])
+    REFERENCES [dbo].[Articulos]
+        ([IdArticulo])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TicketArticulos'
+CREATE INDEX [IX_FK_TicketArticulos]
+ON [dbo].[TicketSet]
+    ([Articulo_IdArticulo]);
+GO
+
+-- Creating foreign key on [Personals_IdPersonal] in table 'TicketSet'
+ALTER TABLE [dbo].[TicketSet]
+ADD CONSTRAINT [FK_TicketPersonals]
+    FOREIGN KEY ([Personals_IdPersonal])
+    REFERENCES [dbo].[Personals]
+        ([IdPersonal])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TicketPersonals'
+CREATE INDEX [IX_FK_TicketPersonals]
+ON [dbo].[TicketSet]
+    ([Personals_IdPersonal]);
+GO
+
+-- Creating foreign key on [KnowledgeItemId] in table 'TicketSet'
+ALTER TABLE [dbo].[TicketSet]
+ADD CONSTRAINT [FK_KnowledgeItemTicket]
+    FOREIGN KEY ([KnowledgeItemId])
+    REFERENCES [dbo].[KnowledgeItemSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_KnowledgeItemTicket'
+CREATE INDEX [IX_FK_KnowledgeItemTicket]
+ON [dbo].[TicketSet]
+    ([KnowledgeItemId]);
+GO
+
+-- Creating foreign key on [KnowledgeItem_Id] in table 'ComentarioSet'
+ALTER TABLE [dbo].[ComentarioSet]
+ADD CONSTRAINT [FK_ComentarioKnowledgeItem]
+    FOREIGN KEY ([KnowledgeItem_Id])
+    REFERENCES [dbo].[KnowledgeItemSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ComentarioKnowledgeItem'
+CREATE INDEX [IX_FK_ComentarioKnowledgeItem]
+ON [dbo].[ComentarioSet]
+    ([KnowledgeItem_Id]);
 GO
 
 -- --------------------------------------------------
