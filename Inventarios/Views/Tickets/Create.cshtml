@@ -1,22 +1,22 @@
 ﻿@model Inventarios.Models.Ticket
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Tickets";
     Layout = "~/Views/Shared/_LayoutHelpDesk.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Tickets</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Ticket</h4>
+        <h4>Crear nuevo ticket</h4>
         <hr />
         @Html.ValidationSummary(true)
         <div class="form-group">
-            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Titulo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Titulo)
                 @Html.ValidationMessageFor(model => model.Titulo)
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Categoria, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Categoria)
                 @Html.ValidationMessageFor(model => model.Categoria)
@@ -32,39 +32,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Prioridad, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Priodidad", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Prioridad)
                 @Html.ValidationMessageFor(model => model.Prioridad)
             </div>
         </div>
-
+        
         <div class="form-group">
-            @Html.LabelFor(model => model.FechaCreacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaCreacion)
-                @Html.ValidationMessageFor(model => model.FechaCreacion)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IdCreador, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IdCreador)
-                @Html.ValidationMessageFor(model => model.IdCreador)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FechaUltimaActualizacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaUltimaActualizacion)
-                @Html.ValidationMessageFor(model => model.FechaUltimaActualizacion)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FechaVencimiento, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Fecha de vencimiento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.FechaVencimiento)
                 @Html.ValidationMessageFor(model => model.FechaVencimiento)
@@ -72,15 +48,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Descripcion)
+                @Html.TextAreaFor(model => model.Descripcion)
                 @Html.ValidationMessageFor(model => model.Descripcion)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.KnowledgeItemId, "KnowledgeItemId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Post de KB relacionado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("KnowledgeItemId", String.Empty)
                 @Html.ValidationMessageFor(model => model.KnowledgeItemId)
@@ -88,7 +64,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ArticulosIdArticulo, "ArticulosIdArticulo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("CI relacionado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ArticulosIdArticulo", String.Empty)
                 @Html.ValidationMessageFor(model => model.ArticulosIdArticulo)
@@ -96,7 +72,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PersonalsIdPersonal, "PersonalsIdPersonal", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Asignado a", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("PersonalsIdPersonal", String.Empty)
                 @Html.ValidationMessageFor(model => model.PersonalsIdPersonal)
@@ -105,12 +81,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear ticket" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar al listado", "Index")
 </div>

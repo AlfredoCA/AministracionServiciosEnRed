@@ -50,8 +50,11 @@ namespace Inventarios.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Titulo,Categoria,Prioridad,FechaCreacion,IdCreador,FechaUltimaActualizacion,FechaVencimiento,Descripcion,KnowledgeItemId,ArticulosIdArticulo,PersonalsIdPersonal")] Ticket ticket)
+        public ActionResult Create([Bind(Include = "Id,Titulo,Categoria,Prioridad,FechaVencimiento,Descripcion,KnowledgeItemId,ArticulosIdArticulo,PersonalsIdPersonal")] Ticket ticket)
         {
+            ticket.FechaCreacion = DateTime.Now;
+            ticket.FechaUltimaActualizacion = DateTime.Now;
+            ticket.IdCreador = User.Identity.Name;
             if (ModelState.IsValid)
             {
                 db.TicketSet.Add(ticket);
