@@ -15,7 +15,7 @@ namespace Inventarios.Controllers
         private Entities db = new Entities();
 
         // GET: KnowledgeItems
-        public ActionResult Index()
+        public ActionResult Index(string search = null)
         {
             return View(db.KnowledgeItemSet.ToList());
         }
