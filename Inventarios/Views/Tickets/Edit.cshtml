@@ -28,24 +28,60 @@
         <div class="form-group">
             @Html.Label("Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Categoria)
-                @Html.ValidationMessageFor(model => model.Categoria)
+                @Html.DropDownListFor(model => model.Categoria, new SelectList(
+                  new List<Object>{
+                       new { value = "Petición de serv.: mover/agregar/cambiar el sistema" , text = "Petición de serv.: mover/agregar/cambiar el sistema"  },
+                       new { value = "Petición de serv.: resetear contraseña" , text = "Petición de serv.: resetear contraseña" },
+                       new { value = "Petición de serv.: actualizar licencia" , text = "Petición de serv.: actualizar licencia"},
+					   new { value = "Petición de serv.: revisión contra software malicioso" , text = "Petición de serv.: revisión contra software malicioso" },
+					   new { value = "Petición de serv.: mantenimiento preventivo" , text = "Petición de serv.: mantenimiento preventivo" },
+					   new { value = "Fallas: hardware" , text = "Fallas: hardware" },
+					   new { value = "Fallas: software" , text = "Fallas: software" },
+					   new { value = "Fallas: servicios" , text = "Fallas: servicios" },
+					   new { value = "Incidentes técnicos: hardware" , text = "Incidentes técnicos: hardware" },
+					   new { value = "Incidentes técnicos: software" , text = "Incidentes técnicos: software" },
+					   new { value = "Incidentes técnicos: servicios" , text = "Incidentes técnicos: servicios" },
+					   new { value = "Ayuda/Asistencia: solicitar información" , text = "Ayuda/Asistencia: solicitar información" },
+					   new { value = "Ayuda/Asistencia: asistencia de capacitación" , text = "Ayuda/Asistencia: asistencia de capacitación" }
+                    },
+                  "value",
+                  "text", 1))
             </div>
         </div>
 
         <div class="form-group">
             @Html.Label("Prioridad", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Prioridad)
-                @Html.ValidationMessageFor(model => model.Prioridad)
+                @Html.DropDownListFor(model => model.Prioridad, new SelectList(
+                  new List<Object>{
+                       new { value = "Muy alta", text = "Muy alta"  },
+                       new { value = "Alta", text = "Alta" },
+                       new { value = "Media", text = "Media"},
+					   new { value = "Baja", text = "Baja" },
+					   new { value = "Muy baja", text = "Muy baja" }
+                    },
+                  "value",
+                  "text",
+            1))
             </div>
         </div>
 
         <div class="form-group">
             @Html.Label("Status", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Status)
-                @Html.ValidationMessageFor(model => model.Status)
+                @Html.DropDownListFor(model => model.Status, new SelectList(
+                  new List<Object>{
+                       new { value = "Nuevo", text = "Nuevo"  },
+                       new { value = "Siendo analizado", text = "Siendo analizado" },
+                       new { value = "En proceso de aprobación", text = "En proceso de aprobación"},
+					   new { value = "Esperando a ser cerrado", text = "Esperando a ser cerrado" },
+					   new { value = "Problema identificado", text = "Problema identificado" },
+					   new { value = "Problema resuelto", text = "Problema resuelto" },
+					   new { value = "Problema cerrado sin ser resuelto" , text = "Problema cerrado sin ser resuelto" }
+                    },
+                  "value",
+                  "text",
+            1))
             </div>
         </div>
 

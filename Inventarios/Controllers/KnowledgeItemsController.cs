@@ -52,8 +52,11 @@ namespace Inventarios.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Titulo,FechaCreacion,FechaUltimaModificacion,Creador,Keywords,Descripcion")] KnowledgeItem knowledgeItem)
+        public ActionResult Create([Bind(Include = "Id,Titulo,,Keywords,Descripcion")] KnowledgeItem knowledgeItem)
         {
+            knowledgeItem.FechaCreacion = DateTime.Now;
+            knowledgeItem.FechaUltimaModificacion = DateTime.Now;
+            knowledgeItem.Creador = User.Identity.Name;
             if (ModelState.IsValid)
             {
                 db.KnowledgeItemSet.Add(knowledgeItem);

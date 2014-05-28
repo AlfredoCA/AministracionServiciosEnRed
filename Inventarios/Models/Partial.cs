@@ -87,4 +87,16 @@ namespace Inventarios.Models
 
     }
 
+    [MetadataType(typeof(KnowledgeItemMetadata))]
+    public partial class KnowledgeItem
+    {
+        public string KnowledgeItemFK
+        {
+            get
+            {
+                return this.Id + " - " + this.Titulo;
+            }
+        }
+    }
+
 }

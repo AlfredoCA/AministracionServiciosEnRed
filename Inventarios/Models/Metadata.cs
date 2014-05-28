@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Inventarios.Models
 {
@@ -182,5 +183,11 @@ namespace Inventarios.Models
         [MaxLength(500, ErrorMessage = "Excediste el tamaño definido del campo")] 
         public string Detalles;
     }    
+
+    public class KnowledgeItemMetadata
+    {
+        [AllowHtml]
+        public string Descripcion {get; set;}
+    }
     
 }

@@ -5,22 +5,13 @@
     Layout = "~/Views/Shared/_LayoutHelpDesk.cshtml";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>KnowledgeItem</h4>
+    <h2>@Html.DisplayFor(model => model.Titulo)</h2>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FechaCreacion)
+            Fecha de creación
         </dt>
 
         <dd>
@@ -28,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FechaUltimaModificacion)
+            Fecha de la última modificación
         </dt>
 
         <dd>
@@ -36,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Creador)
+            Creado por
         </dt>
 
         <dd>
@@ -44,24 +35,18 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Keywords)
+            Palabras clave
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Keywords)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-
     </dl>
+    <p>
+        @Html.Raw(Model.Descripcion)
+    </p>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar al listado", "Index")
 </p>

@@ -18,6 +18,7 @@ namespace Inventarios.Controllers
         public ActionResult Index()
         {
             var ticketSet = db.TicketSet.Include(t => t.KnowledgeItem).Include(t => t.Articulos).Include(t => t.Personals);
+            ticketSet = ticketSet.OrderBy(x => x.FechaVencimiento);
             return View(ticketSet.ToList());
         }
 
@@ -39,8 +40,8 @@ namespace Inventarios.Controllers
         // GET: Tickets/Create
         public ActionResult Create()
         {
-            ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "Titulo");
-            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "OtrosDetalles");
+            ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "KnowledgeItemFK");
+            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "VistaArticulo");
             ViewBag.PersonalsIdPersonal = new SelectList(db.Personals, "IdPersonal", "Nombre");
             return View();
         }
@@ -85,8 +86,8 @@ namespace Inventarios.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "Titulo", ticket.KnowledgeItemId);
-            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "OtrosDetalles", ticket.ArticulosIdArticulo);
+            ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "KnowledgeItemFK", ticket.KnowledgeItemId);
+            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "VistaArticulo", ticket.ArticulosIdArticulo);
             ViewBag.PersonalsIdPersonal = new SelectList(db.Personals, "IdPersonal", "Nombre", ticket.PersonalsIdPersonal);
             return View(ticket);
         }
@@ -103,8 +104,8 @@ namespace Inventarios.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "Titulo", ticket.KnowledgeItemId);
-            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "OtrosDetalles", ticket.ArticulosIdArticulo);
+            ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "KnowledgeItemFK", ticket.KnowledgeItemId);
+            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "VistaArticulo", ticket.ArticulosIdArticulo);
             ViewBag.PersonalsIdPersonal = new SelectList(db.Personals, "IdPersonal", "Nombre", ticket.PersonalsIdPersonal);
             return View(ticket);
         }
@@ -144,8 +145,8 @@ namespace Inventarios.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "Titulo", ticket.KnowledgeItemId);
-            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "OtrosDetalles", ticket.ArticulosIdArticulo);
+            ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "KnowledgeItemFK", ticket.KnowledgeItemId);
+            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "VistaArticulo", ticket.ArticulosIdArticulo);
             ViewBag.PersonalsIdPersonal = new SelectList(db.Personals, "IdPersonal", "Nombre", ticket.PersonalsIdPersonal);
             return View(ticket);
         }
