@@ -29,12 +29,12 @@
         <AssociationConnector Association="cmdbModel.ArticulosRelacion" />
         <AssociationConnector Association="cmdbModel.ArticulosRelacion1" />
         <EntityTypeShape EntityType="cmdbModel.Ticket" Width="1.5" PointX="10.5" PointY="3.375" />
-        <AssociationConnector Association="cmdbModel.TicketArticulos" />
-        <AssociationConnector Association="cmdbModel.TicketPersonals" />
         <EntityTypeShape EntityType="cmdbModel.KnowledgeItem" Width="1.5" PointX="10.25" PointY="8.25" />
         <AssociationConnector Association="cmdbModel.KnowledgeItemTicket" />
         <EntityTypeShape EntityType="cmdbModel.Comentario" Width="1.5" PointX="7.875" PointY="10.375" />
         <AssociationConnector Association="cmdbModel.ComentarioKnowledgeItem" />
+        <AssociationConnector Association="cmdbModel.ArticulosTicket" />
+        <AssociationConnector Association="cmdbModel.PersonalsTicket" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

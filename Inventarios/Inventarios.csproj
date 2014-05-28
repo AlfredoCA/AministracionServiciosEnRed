@@ -132,7 +132,6 @@
     <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Controllers\RelacionController.cs" />
     <Compile Include="Controllers\TercerasPersonasController.cs" />
-    <Compile Include="Controllers\Tickets.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Controllers\TipoArticuloController.cs" />
     <Compile Include="Controllers\TipoCompaniaController.cs" />
@@ -317,16 +316,16 @@
     <Content Include="Views\Usuarios\Delete.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Shared\_LayoutHelpDesk.cshtml" />
-    <Content Include="Views\Tickets\Create.cshtml" />
-    <Content Include="Views\Tickets\Delete.cshtml" />
-    <Content Include="Views\Tickets\Details.cshtml" />
-    <Content Include="Views\Tickets\Edit.cshtml" />
-    <Content Include="Views\Tickets\Index.cshtml" />
     <Content Include="Views\KnowledgeItems\Create.cshtml" />
     <Content Include="Views\KnowledgeItems\Delete.cshtml" />
     <Content Include="Views\KnowledgeItems\Details.cshtml" />
     <Content Include="Views\KnowledgeItems\Edit.cshtml" />
     <Content Include="Views\KnowledgeItems\Index.cshtml" />
+    <Content Include="Views\Tickets\Create.cshtml" />
+    <Content Include="Views\Tickets\Delete.cshtml" />
+    <Content Include="Views\Tickets\Details.cshtml" />
+    <Content Include="Views\Tickets\Edit.cshtml" />
+    <Content Include="Views\Tickets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -90,6 +90,22 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.ArticulosIdArticulo, "ArticulosIdArticulo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ArticulosIdArticulo", String.Empty)
+                @Html.ValidationMessageFor(model => model.ArticulosIdArticulo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PersonalsIdPersonal, "PersonalsIdPersonal", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PersonalsIdPersonal", String.Empty)
+                @Html.ValidationMessageFor(model => model.PersonalsIdPersonal)
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>

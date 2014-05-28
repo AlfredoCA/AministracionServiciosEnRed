@@ -68,14 +68,6 @@
       <End Role="Articulos" EntitySet="Articulos" />
       <End Role="Relacion" EntitySet="RelacionSet" />
     </AssociationSet>
-    <AssociationSet Name="TicketArticulos" Association="cmdbModel.Store.TicketArticulos">
-      <End Role="Ticket" EntitySet="TicketSet" />
-      <End Role="Articulos" EntitySet="Articulos" />
-    </AssociationSet>
-    <AssociationSet Name="TicketPersonals" Association="cmdbModel.Store.TicketPersonals">
-      <End Role="Ticket" EntitySet="TicketSet" />
-      <End Role="Personals" EntitySet="Personals" />
-    </AssociationSet>
     <AssociationSet Name="KnowledgeItemTicket" Association="cmdbModel.Store.KnowledgeItemTicket">
       <End Role="KnowledgeItem" EntitySet="KnowledgeItemSet" />
       <End Role="Ticket" EntitySet="TicketSet" />
@@ -83,6 +75,14 @@
     <AssociationSet Name="ComentarioKnowledgeItem" Association="cmdbModel.Store.ComentarioKnowledgeItem">
       <End Role="Comentario" EntitySet="ComentarioSet" />
       <End Role="KnowledgeItem" EntitySet="KnowledgeItemSet" />
+    </AssociationSet>
+    <AssociationSet Name="ArticulosTicket" Association="cmdbModel.Store.ArticulosTicket">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonalsTicket" Association="cmdbModel.Store.PersonalsTicket">
+      <End Role="Personals" EntitySet="Personals" />
+      <End Role="Ticket" EntitySet="TicketSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Articulos">
@@ -202,8 +202,8 @@
     <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="KnowledgeItemId" Type="int" Nullable="true" />
-    <Property Name="Articulo_IdArticulo" Type="int" Nullable="false" />
-    <Property Name="Personals_IdPersonal" Type="int" Nullable="false" />
+    <Property Name="ArticulosIdArticulo" Type="int" Nullable="true" />
+    <Property Name="PersonalsIdPersonal" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="KnowledgeItemSet">
     <Key>
@@ -371,30 +371,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TicketArticulos">
-    <End Role="Ticket" Type="cmdbModel.Store.TicketSet" Multiplicity="*" />
-    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Articulos">
-        <PropertyRef Name="IdArticulo" />
-      </Principal>
-      <Dependent Role="Ticket">
-        <PropertyRef Name="Articulo_IdArticulo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="TicketPersonals">
-    <End Role="Ticket" Type="cmdbModel.Store.TicketSet" Multiplicity="*" />
-    <End Role="Personals" Type="cmdbModel.Store.Personals" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Personals">
-        <PropertyRef Name="IdPersonal" />
-      </Principal>
-      <Dependent Role="Ticket">
-        <PropertyRef Name="Personals_IdPersonal" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="KnowledgeItemTicket">
     <End Role="KnowledgeItem" Type="cmdbModel.Store.KnowledgeItemSet" Multiplicity="0..1" />
     <End Role="Ticket" Type="cmdbModel.Store.TicketSet" Multiplicity="*" />
@@ -416,6 +392,30 @@
       </Principal>
       <Dependent Role="Comentario">
         <PropertyRef Name="KnowledgeItem_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticulosTicket">
+    <End Role="Articulos" Type="cmdbModel.Store.Articulos" Multiplicity="0..1" />
+    <End Role="Ticket" Type="cmdbModel.Store.TicketSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulos">
+        <PropertyRef Name="IdArticulo" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="ArticulosIdArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonalsTicket">
+    <End Role="Personals" Type="cmdbModel.Store.Personals" Multiplicity="0..1" />
+    <End Role="Ticket" Type="cmdbModel.Store.TicketSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personals">
+        <PropertyRef Name="IdPersonal" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="PersonalsIdPersonal" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -444,7 +444,7 @@
           <Property Name="CostoAdquisicion" Type="Double" Nullable="false" />
           <NavigationProperty Name="Relacion" Relationship="cmdbModel.ArticulosRelacion" FromRole="Articulos" ToRole="Relacion" />
           <NavigationProperty Name="RelacionDos" Relationship="cmdbModel.ArticulosRelacion1" FromRole="Articulos" ToRole="Relacion" />
-          <NavigationProperty Name="Ticket" Relationship="cmdbModel.TicketArticulos" FromRole="Articulos" ToRole="Ticket" />
+          <NavigationProperty Name="Ticket" Relationship="cmdbModel.ArticulosTicket" FromRole="Articulos" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="Contratos">
           <Key>
@@ -502,7 +502,7 @@
           <Property Name="IdDepartamento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Departamentos" Relationship="Self.FK_DepartamentoPersonal" FromRole="Personals" ToRole="Departamentos" />
           <NavigationProperty Name="Articulos" Relationship="cmdbModel.ArticulosPersonals" FromRole="Personals" ToRole="Articulos" />
-          <NavigationProperty Name="Ticket" Relationship="cmdbModel.TicketPersonals" FromRole="Personals" ToRole="Ticket" />
+          <NavigationProperty Name="Ticket" Relationship="cmdbModel.PersonalsTicket" FromRole="Personals" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="TercerasPersonas">
           <Key>
@@ -687,14 +687,6 @@
             <End Role="Relacion" EntitySet="RelacionSet" />
           </AssociationSet>
           <EntitySet Name="TicketSet" EntityType="cmdbModel.Ticket" />
-          <AssociationSet Name="TicketArticulos" Association="cmdbModel.TicketArticulos">
-            <End Role="Ticket" EntitySet="TicketSet" />
-            <End Role="Articulos" EntitySet="Articulos" />
-          </AssociationSet>
-          <AssociationSet Name="TicketPersonals" Association="cmdbModel.TicketPersonals">
-            <End Role="Ticket" EntitySet="TicketSet" />
-            <End Role="Personals" EntitySet="Personals" />
-          </AssociationSet>
           <EntitySet Name="KnowledgeItemSet" EntityType="cmdbModel.KnowledgeItem" />
           <AssociationSet Name="KnowledgeItemTicket" Association="cmdbModel.KnowledgeItemTicket">
             <End Role="KnowledgeItem" EntitySet="KnowledgeItemSet" />
@@ -704,6 +696,14 @@
           <AssociationSet Name="ComentarioKnowledgeItem" Association="cmdbModel.ComentarioKnowledgeItem">
             <End Role="Comentario" EntitySet="ComentarioSet" />
             <End Role="KnowledgeItem" EntitySet="KnowledgeItemSet" />
+          </AssociationSet>
+          <AssociationSet Name="ArticulosTicket" Association="cmdbModel.ArticulosTicket">
+            <End Role="Articulos" EntitySet="Articulos" />
+            <End Role="Ticket" EntitySet="TicketSet" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalsTicket" Association="cmdbModel.PersonalsTicket">
+            <End Role="Personals" EntitySet="Personals" />
+            <End Role="Ticket" EntitySet="TicketSet" />
           </AssociationSet>
         </EntityContainer>
         <Association Name="ArticulosPersonals">
@@ -789,19 +789,13 @@
           <Property Name="FechaUltimaActualizacion" Type="DateTime" Nullable="false" />
           <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
-          <NavigationProperty Name="Articulo" Relationship="cmdbModel.TicketArticulos" FromRole="Ticket" ToRole="Articulos" />
-          <NavigationProperty Name="Personals" Relationship="cmdbModel.TicketPersonals" FromRole="Ticket" ToRole="Personals" />
           <NavigationProperty Name="KnowledgeItem" Relationship="cmdbModel.KnowledgeItemTicket" FromRole="Ticket" ToRole="KnowledgeItem" />
           <Property Name="KnowledgeItemId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Articulos" Relationship="cmdbModel.ArticulosTicket" FromRole="Ticket" ToRole="Articulos" />
+          <Property Name="ArticulosIdArticulo" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Personals" Relationship="cmdbModel.PersonalsTicket" FromRole="Ticket" ToRole="Personals" />
+          <Property Name="PersonalsIdPersonal" Type="Int32" Nullable="true" />
         </EntityType>
-        <Association Name="TicketArticulos">
-          <End Type="cmdbModel.Ticket" Role="Ticket" Multiplicity="*" />
-          <End Type="cmdbModel.Articulos" Role="Articulos" Multiplicity="1" />
-        </Association>
-        <Association Name="TicketPersonals">
-          <End Type="cmdbModel.Ticket" Role="Ticket" Multiplicity="*" />
-          <End Type="cmdbModel.Personals" Role="Personals" Multiplicity="1" />
-        </Association>
         <EntityType Name="KnowledgeItem">
           <Key>
             <PropertyRef Name="Id" />
@@ -841,6 +835,30 @@
         <Association Name="ComentarioKnowledgeItem">
           <End Type="cmdbModel.Comentario" Role="Comentario" Multiplicity="*" />
           <End Type="cmdbModel.KnowledgeItem" Role="KnowledgeItem" Multiplicity="1" />
+        </Association>
+        <Association Name="ArticulosTicket">
+          <End Type="cmdbModel.Articulos" Role="Articulos" Multiplicity="0..1" />
+          <End Type="cmdbModel.Ticket" Role="Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulos">
+              <PropertyRef Name="IdArticulo" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="ArticulosIdArticulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalsTicket">
+          <End Type="cmdbModel.Personals" Role="Personals" Multiplicity="0..1" />
+          <End Type="cmdbModel.Ticket" Role="Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personals">
+              <PropertyRef Name="IdPersonal" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="PersonalsIdPersonal" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -975,6 +993,8 @@
           <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="KnowledgeItemId" ColumnName="KnowledgeItemId" />
+          <ScalarProperty Name="ArticulosIdArticulo" ColumnName="ArticulosIdArticulo" />
+          <ScalarProperty Name="PersonalsIdPersonal" ColumnName="PersonalsIdPersonal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1001,22 +1021,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="TicketArticulos" TypeName="cmdbModel.TicketArticulos" StoreEntitySet="TicketSet">
-      <EndProperty Name="Articulos">
-        <ScalarProperty Name="IdArticulo" ColumnName="Articulo_IdArticulo" />
-      </EndProperty>
-      <EndProperty Name="Ticket">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="TicketPersonals" TypeName="cmdbModel.TicketPersonals" StoreEntitySet="TicketSet">
-      <EndProperty Name="Personals">
-        <ScalarProperty Name="IdPersonal" ColumnName="Personals_IdPersonal" />
-      </EndProperty>
-      <EndProperty Name="Ticket">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="ComentarioKnowledgeItem" TypeName="cmdbModel.ComentarioKnowledgeItem" StoreEntitySet="ComentarioSet">
       <EndProperty Name="KnowledgeItem">
         <ScalarProperty Name="Id" ColumnName="KnowledgeItem_Id" />

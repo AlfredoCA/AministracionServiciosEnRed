@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2014 13:34:28
+-- Date Created: 05/28/2014 13:56:15
 -- Generated from EDMX file: C:\Users\JuanCarlos\Documents\GitHub\AministracionServiciosEnRed\Inventarios\Models\Model.edmx
 -- --------------------------------------------------
 
@@ -53,9 +53,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosRelacion1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RelacionSet] DROP CONSTRAINT [FK_ArticulosRelacion1];
 GO
-IF OBJECT_ID(N'[dbo].[FK_TicketArticulos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_TicketArticulos];
-GO
 IF OBJECT_ID(N'[dbo].[FK_TicketPersonals]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_TicketPersonals];
 GO
@@ -64,6 +61,9 @@ IF OBJECT_ID(N'[dbo].[FK_KnowledgeItemTicket]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_ComentarioKnowledgeItem]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ComentarioSet] DROP CONSTRAINT [FK_ComentarioKnowledgeItem];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ArticulosTicket]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_ArticulosTicket];
 GO
 
 -- --------------------------------------------------
@@ -232,8 +232,8 @@ CREATE TABLE [dbo].[TicketSet] (
     [FechaVencimiento] datetime  NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
     [KnowledgeItemId] int  NULL,
-    [Articulo_IdArticulo] int  NOT NULL,
-    [Personals_IdPersonal] int  NOT NULL
+    [ArticulosIdArticulo] int  NULL,
+    [PersonalsIdPersonal] int  NULL
 );
 GO
 
@@ -531,36 +531,6 @@ ON [dbo].[RelacionSet]
     ([IdArticulo2]);
 GO
 
--- Creating foreign key on [Articulo_IdArticulo] in table 'TicketSet'
-ALTER TABLE [dbo].[TicketSet]
-ADD CONSTRAINT [FK_TicketArticulos]
-    FOREIGN KEY ([Articulo_IdArticulo])
-    REFERENCES [dbo].[Articulos]
-        ([IdArticulo])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_TicketArticulos'
-CREATE INDEX [IX_FK_TicketArticulos]
-ON [dbo].[TicketSet]
-    ([Articulo_IdArticulo]);
-GO
-
--- Creating foreign key on [Personals_IdPersonal] in table 'TicketSet'
-ALTER TABLE [dbo].[TicketSet]
-ADD CONSTRAINT [FK_TicketPersonals]
-    FOREIGN KEY ([Personals_IdPersonal])
-    REFERENCES [dbo].[Personals]
-        ([IdPersonal])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_TicketPersonals'
-CREATE INDEX [IX_FK_TicketPersonals]
-ON [dbo].[TicketSet]
-    ([Personals_IdPersonal]);
-GO
-
 -- Creating foreign key on [KnowledgeItemId] in table 'TicketSet'
 ALTER TABLE [dbo].[TicketSet]
 ADD CONSTRAINT [FK_KnowledgeItemTicket]
@@ -589,6 +559,36 @@ GO
 CREATE INDEX [IX_FK_ComentarioKnowledgeItem]
 ON [dbo].[ComentarioSet]
     ([KnowledgeItem_Id]);
+GO
+
+-- Creating foreign key on [ArticulosIdArticulo] in table 'TicketSet'
+ALTER TABLE [dbo].[TicketSet]
+ADD CONSTRAINT [FK_ArticulosTicket]
+    FOREIGN KEY ([ArticulosIdArticulo])
+    REFERENCES [dbo].[Articulos]
+        ([IdArticulo])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ArticulosTicket'
+CREATE INDEX [IX_FK_ArticulosTicket]
+ON [dbo].[TicketSet]
+    ([ArticulosIdArticulo]);
+GO
+
+-- Creating foreign key on [PersonalsIdPersonal] in table 'TicketSet'
+ALTER TABLE [dbo].[TicketSet]
+ADD CONSTRAINT [FK_PersonalsTicket]
+    FOREIGN KEY ([PersonalsIdPersonal])
+    REFERENCES [dbo].[Personals]
+        ([IdPersonal])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonalsTicket'
+CREATE INDEX [IX_FK_PersonalsTicket]
+ON [dbo].[TicketSet]
+    ([PersonalsIdPersonal]);
 GO
 
 -- --------------------------------------------------

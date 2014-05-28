@@ -17,7 +17,7 @@ namespace Inventarios.Controllers
         // GET: Tickets
         public ActionResult Index()
         {
-            var ticketSet = db.TicketSet.Include(t => t.KnowledgeItem);
+            var ticketSet = db.TicketSet.Include(t => t.KnowledgeItem).Include(t => t.Articulos).Include(t => t.Personals);
             return View(ticketSet.ToList());
         }
 
@@ -40,6 +40,8 @@ namespace Inventarios.Controllers
         public ActionResult Create()
         {
             ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "Titulo");
+            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "OtrosDetalles");
+            ViewBag.PersonalsIdPersonal = new SelectList(db.Personals, "IdPersonal", "Nombre");
             return View();
         }
 
@@ -48,7 +50,7 @@ namespace Inventarios.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Titulo,Categoria,Prioridad,FechaCreacion,IdCreador,FechaUltimaActualizacion,FechaVencimiento,Descripcion,KnowledgeItemId")] Ticket ticket)
+        public ActionResult Create([Bind(Include = "Id,Titulo,Categoria,Prioridad,FechaCreacion,IdCreador,FechaUltimaActualizacion,FechaVencimiento,Descripcion,KnowledgeItemId,ArticulosIdArticulo,PersonalsIdPersonal")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +60,8 @@ namespace Inventarios.Controllers
             }
 
             ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "Titulo", ticket.KnowledgeItemId);
+            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "OtrosDetalles", ticket.ArticulosIdArticulo);
+            ViewBag.PersonalsIdPersonal = new SelectList(db.Personals, "IdPersonal", "Nombre", ticket.PersonalsIdPersonal);
             return View(ticket);
         }
 
@@ -74,6 +78,8 @@ namespace Inventarios.Controllers
                 return HttpNotFound();
             }
             ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "Titulo", ticket.KnowledgeItemId);
+            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "OtrosDetalles", ticket.ArticulosIdArticulo);
+            ViewBag.PersonalsIdPersonal = new SelectList(db.Personals, "IdPersonal", "Nombre", ticket.PersonalsIdPersonal);
             return View(ticket);
         }
 
@@ -82,7 +88,7 @@ namespace Inventarios.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Titulo,Categoria,Prioridad,FechaCreacion,IdCreador,FechaUltimaActualizacion,FechaVencimiento,Descripcion,KnowledgeItemId")] Ticket ticket)
+        public ActionResult Edit([Bind(Include = "Id,Titulo,Categoria,Prioridad,FechaCreacion,IdCreador,FechaUltimaActualizacion,FechaVencimiento,Descripcion,KnowledgeItemId,ArticulosIdArticulo,PersonalsIdPersonal")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -91,6 +97,8 @@ namespace Inventarios.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.KnowledgeItemId = new SelectList(db.KnowledgeItemSet, "Id", "Titulo", ticket.KnowledgeItemId);
+            ViewBag.ArticulosIdArticulo = new SelectList(db.Articulos, "IdArticulo", "OtrosDetalles", ticket.ArticulosIdArticulo);
+            ViewBag.PersonalsIdPersonal = new SelectList(db.Personals, "IdPersonal", "Nombre", ticket.PersonalsIdPersonal);
             return View(ticket);
         }
 

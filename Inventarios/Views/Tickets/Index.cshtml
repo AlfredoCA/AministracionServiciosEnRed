@@ -39,6 +39,12 @@
         <th>
             @Html.DisplayNameFor(model => model.KnowledgeItem.Titulo)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Articulos.OtrosDetalles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personals.Nombre)
+        </th>
         <th></th>
     </tr>
 
@@ -70,6 +76,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.KnowledgeItem.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulos.OtrosDetalles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personals.Nombre)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
