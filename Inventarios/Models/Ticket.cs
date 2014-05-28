@@ -23,7 +23,7 @@ namespace Inventarios.Models
         public System.DateTime FechaUltimaActualizacion { get; set; }
         public System.DateTime FechaVencimiento { get; set; }
         public string Descripcion { get; set; }
-        public int KnowledgeItemId { get; set; }
+        public Nullable<int> KnowledgeItemId { get; set; }
     
         public virtual Articulos Articulo { get; set; }
         public virtual Personals Personals { get; set; }

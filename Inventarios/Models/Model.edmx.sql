@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2014 13:04:18
+-- Date Created: 05/28/2014 13:34:28
 -- Generated from EDMX file: C:\Users\JuanCarlos\Documents\GitHub\AministracionServiciosEnRed\Inventarios\Models\Model.edmx
 -- --------------------------------------------------
 
@@ -59,6 +59,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_TicketPersonals]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_TicketPersonals];
 GO
+IF OBJECT_ID(N'[dbo].[FK_KnowledgeItemTicket]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_KnowledgeItemTicket];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ComentarioKnowledgeItem]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ComentarioSet] DROP CONSTRAINT [FK_ComentarioKnowledgeItem];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -99,6 +105,12 @@ IF OBJECT_ID(N'[dbo].[RelacionSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[TicketSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TicketSet];
+GO
+IF OBJECT_ID(N'[dbo].[KnowledgeItemSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KnowledgeItemSet];
+GO
+IF OBJECT_ID(N'[dbo].[ComentarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ComentarioSet];
 GO
 
 -- --------------------------------------------------
@@ -219,7 +231,7 @@ CREATE TABLE [dbo].[TicketSet] (
     [FechaUltimaActualizacion] datetime  NOT NULL,
     [FechaVencimiento] datetime  NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
-    [KnowledgeItemId] int  NOT NULL,
+    [KnowledgeItemId] int  NULL,
     [Articulo_IdArticulo] int  NOT NULL,
     [Personals_IdPersonal] int  NOT NULL
 );

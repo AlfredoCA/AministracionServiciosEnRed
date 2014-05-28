@@ -1,0 +1,91 @@
+﻿@model Inventarios.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutHelpDesk.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prioridad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prioridad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCreador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdCreador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaUltimaActualizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaUltimaActualizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaVencimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaVencimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KnowledgeItem.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KnowledgeItem.Titulo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
