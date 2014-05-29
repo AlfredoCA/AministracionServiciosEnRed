@@ -128,7 +128,64 @@
             }]
         });
     });
+
+    $(function () {
+        $('#incidencias').highcharts({
+            title: {
+                text: 'Tickets creados',
+                x: -20 //center
+            },
+            xAxis: {
+                categories: [
+                    @for(int i = 9; i >= 0; i--)
+                    {
+                        @Html.Raw("'" + String.Format("{0:d/M/yyyy}", DateTime.Now.AddDays(-i).Date )+ "'")
+                        if(i != 0)
+                        {
+                            @Html.Raw(",")
+                        }
+                    }
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Tickets creados'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: ' tickets'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Tickets',
+                data: [
+                    @for(int i = 9; i >= 0; i--)
+                    {
+                        @ViewBag.Incidencias[i]
+                        if(i != 0)
+                        {
+                            @Html.Raw(",")
+                        }
+                    }
+                ]
+            }]
+        });
+    });
+
 </script>
+
+<div id="incidencias" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
+</div>
 
 <div id="statuschart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
 </div>
@@ -138,3 +195,4 @@
 
 <div id="prioridadchart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
 </div>
+

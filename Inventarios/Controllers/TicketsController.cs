@@ -203,6 +203,15 @@ namespace Inventarios.Controllers
             ViewBag.Baja = db.TicketSet.Where(x => x.Prioridad.Equals("Baja")).Count();
             ViewBag.MuyBaja = db.TicketSet.Where(x => x.Prioridad.Equals("Muy baja")).Count();
 
+            ViewBag.Incidencias = new int[10];
+            for (int i = 0; i < 10; i++)
+            {
+                var inicio = DateTime.Now.Date.AddDays(-i);
+                var fin = DateTime.Now.Date.AddDays(-i + 1).AddSeconds(-1);
+                ViewBag.Incidencias[i] = db.TicketSet.Where(x => x.FechaCreacion >= inicio && 
+                                                                 x.FechaCreacion <  fin).Count();
+            }
+
             return View();
         }
 
