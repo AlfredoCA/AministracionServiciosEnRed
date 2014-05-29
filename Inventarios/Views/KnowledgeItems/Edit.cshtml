@@ -5,20 +5,26 @@
     Layout = "~/Views/Shared/_LayoutHelpDesk.cshtml";
 }
 
-<h2>Edit</h2>
+
+<script src="/Scripts/nicEdit.js"></script>
+<script type="text/javascript">
+    bkLib.onDomLoaded(function () { nicEditors.allTextAreas() });
+</script>
+
+
+<h2>Editar</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>KnowledgeItem</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Titulo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Titulo)
                 @Html.ValidationMessageFor(model => model.Titulo)
@@ -26,31 +32,34 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FechaCreacion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Fecha de creación", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaCreacion)
+                @Html.DisplayTextFor(model => model.FechaCreacion)
+                @Html.HiddenFor(model => model.FechaCreacion)
                 @Html.ValidationMessageFor(model => model.FechaCreacion)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FechaUltimaModificacion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Última modificación", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaUltimaModificacion)
+                @Html.DisplayTextFor(model => model.FechaUltimaModificacion)
+                @Html.HiddenFor(model => model.FechaUltimaModificacion)
                 @Html.ValidationMessageFor(model => model.FechaUltimaModificacion)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Creador, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Creado por", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Creador)
+                @Html.DisplayTextFor(model => model.Creador)
+                @Html.HiddenFor(model => model.Creador)
                 @Html.ValidationMessageFor(model => model.Creador)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Keywords, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Keywords", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Keywords)
                 @Html.ValidationMessageFor(model => model.Keywords)
@@ -58,21 +67,21 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Descripcion)
+                @Html.TextAreaFor(model => model.Descripcion, htmlAttributes: new { @class = "descripcion" })
                 @Html.ValidationMessageFor(model => model.Descripcion)
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar a la lista", "Index")
 </div>

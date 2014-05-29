@@ -89,6 +89,7 @@ namespace Inventarios.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Titulo,FechaCreacion,FechaUltimaModificacion,Creador,Keywords,Descripcion")] KnowledgeItem knowledgeItem)
         {
+            knowledgeItem.FechaUltimaModificacion = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Entry(knowledgeItem).State = EntityState.Modified;
@@ -122,6 +123,26 @@ namespace Inventarios.Controllers
             db.KnowledgeItemSet.Remove(knowledgeItem);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult AddComment(Comentario comentario)
+        {
+            comentario.Creador = User.Identity.Name;
+            comentario.Fecha = DateTime.Now;            
+            var elements = Request.UrlReferrer.ToString().Split('/');
+            int id = Convert.ToInt32(elements[5]);
+            comentario.KnowledgeItem = db.KnowledgeItemSet.Find(id);
+            db.ComentarioSet.Add(comentario);
+            db.SaveChanges();
+            return Redirect(Request.UrlReferrer.ToString());
+        }
+
+        public ActionResult RemoveComment(int id)
+        {
+            Comentario c = db.ComentarioSet.Find(id);
+            db.ComentarioSet.Remove(c);
+            db.SaveChanges();
+            return Redirect(Request.UrlReferrer.ToString());
         }
 
         protected override void Dispose(bool disposing)

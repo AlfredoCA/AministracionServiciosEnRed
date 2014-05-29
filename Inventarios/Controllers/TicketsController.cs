@@ -15,10 +15,20 @@ namespace Inventarios.Controllers
         private Entities db = new Entities();
 
         // GET: Tickets
-        public ActionResult Index()
+        public ActionResult Index(string filter = "Pending")
         {
             var ticketSet = db.TicketSet.Include(t => t.KnowledgeItem).Include(t => t.Articulos).Include(t => t.Personals);
             ticketSet = ticketSet.OrderBy(x => x.FechaVencimiento);
+            
+            if(filter == "Pending")
+            {
+                ticketSet = ticketSet.Where(x => x.Status != "Problema resuelto");
+            }
+            else
+            {
+                ticketSet = ticketSet.Where(x => x.Status == "Problema resuelto");
+            }
+            
             return View(ticketSet.ToList());
         }
 
@@ -175,6 +185,25 @@ namespace Inventarios.Controllers
             db.TicketSet.Remove(ticket);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Estadisticas()
+        {
+            ViewBag.Abiertos = db.TicketSet.Where(x => x.Status != "Problema resuelto").Count();
+            ViewBag.Cerrados = db.TicketSet.Where(x => x.Status == "Problema resuelto").Count();
+
+            ViewBag.PeticionServicio = db.TicketSet.Where(x => x.Categoria.StartsWith("Petición")).Count();
+            ViewBag.Fallas = db.TicketSet.Where(x => x.Categoria.StartsWith("Fallas")).Count();
+            ViewBag.Incidentes = db.TicketSet.Where(x => x.Categoria.StartsWith("Incidentes")).Count();
+            ViewBag.Ayuda = db.TicketSet.Where(x => x.Categoria.StartsWith("Ayuda")).Count();
+
+            ViewBag.MuyAlta = db.TicketSet.Where(x => x.Prioridad.Equals("Muy alta")).Count();
+            ViewBag.Alta = db.TicketSet.Where(x => x.Prioridad.Equals("Alta")).Count();
+            ViewBag.Media = db.TicketSet.Where(x => x.Prioridad.Equals("Media")).Count();
+            ViewBag.Baja = db.TicketSet.Where(x => x.Prioridad.Equals("Baja")).Count();
+            ViewBag.MuyBaja = db.TicketSet.Where(x => x.Prioridad.Equals("Muy baja")).Count();
+
+            return View();
         }
 
         protected override void Dispose(bool disposing)

@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            Fecha de la última modificación
+            Última modificación
         </dt>
 
         <dd>
@@ -46,7 +46,44 @@
     <p>
         @Html.Raw(Model.Descripcion)
     </p>
+    <dl>
+        <dt>Problemas relacionados</dt>
+        <dd>
+            @foreach(var i in Model.Ticket)
+            {
+                @Html.ActionLink(i.Id.ToString() + " " + i.Titulo, "Edit", "Tickets", new { id = i.Id.ToString() }, null)
+                <br/>
+            }
+        </dd>
+        
+    </dl>
+    
+
+    @foreach (var comentario in Model.Comentario)
+    {
+        <hr />
+        <div class="comentario">
+            <h4>@Html.Raw(comentario.Creador) comentó: </h4>
+            <h5>@Html.Raw(comentario.Texto)</h5>
+            <br />
+            <h6>@Html.Raw(comentario.Fecha)</h6>
+            @if(User.Identity.Name == comentario.Creador)
+            {
+                <h6>@Html.ActionLink("Eliminar", "RemoveComment", new {id = comentario.Id})</h6>    
+            }            
+        </div>
+    } 
+
+    <hr />
+    <h4>Agregar comentario</h4>
+    @using (Html.BeginForm("AddComment", "KnowledgeItems", FormMethod.Post))
+    {
+        @Html.TextArea("Texto", String.Empty)
+        <input type="submit" value="Enviar comentario" />
+    }
+
 </div>
 <p>
+    <br/>
     @Html.ActionLink("Regresar al listado", "Index")
 </p>

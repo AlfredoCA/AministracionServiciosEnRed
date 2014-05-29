@@ -40,6 +40,11 @@ textarea
     height: 80px;
 }
 
+.comentario
+{
+    background-color: beige;
+}
+
 .descripcion
 {
     width: 600px;

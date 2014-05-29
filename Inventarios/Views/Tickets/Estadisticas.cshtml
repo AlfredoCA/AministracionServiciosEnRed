@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Estadisticas";
+    Layout = "~/Views/Shared/_LayoutHelpDesk.cshtml";
+}
+
+<h2>Estadisticas</h2>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script>
+    $(function () {
+        $('#statuschart').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Estadisticas por status'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['Problema resuelto', @ViewBag.Cerrados],
+                    ['Problemas abiertos', @ViewBag.Abiertos]
+                ]
+            }]
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $('#categoriachart').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Estadisticas por categoría'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['Petición de servicio', @ViewBag.PeticionServicio],
+                    ['Fallas', @ViewBag.Fallas],
+                    ['Incidentes técnicos', @ViewBag.Incidentes],
+                    ['Ayuda/Asistencia', @ViewBag.Ayuda]
+                ]
+            }]
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $('#prioridadchart').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Estadisticas por prioridad'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['Muy alta', @ViewBag.MuyAlta],
+                    ['Alta', @ViewBag.Alta],
+                    ['Media', @ViewBag.Media],
+                    ['Baja', @ViewBag.Baja],
+                    ['Muy baja', @ViewBag.MuyBaja]
+                ]
+            }]
+        });
+    });
+</script>
+
+<div id="statuschart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
+</div>
+
+<div id="categoriachart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
+</div>
+
+<div id="prioridadchart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
+</div>

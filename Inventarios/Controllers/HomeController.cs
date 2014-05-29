@@ -26,10 +26,7 @@ namespace Inventarios.Controllers
 
             return View();
         }
-
-
-
-
+        
         public ActionResult SignInAsDifferentUser()
         {
 

@@ -9,6 +9,15 @@
 
 <p>
     @Html.ActionLink("Abrir nuevo ticket", "Create")
+    &nbsp; | &nbsp;
+    @if (Request.Params["filter"] == "Pending" || Request.Params["filter"] == null)
+    {
+        @Html.ActionLink("Ver cerrados", "Index", new { filter = "Closed" })        
+    }
+    else
+    {
+        @Html.ActionLink("Ver pendientes", "Index", new { filter = "Pending" })
+    }    
 </p>
 <table class="table">
     <tr>
@@ -47,15 +56,21 @@
         <td>
             @Html.DisplayFor(modelItem => item.Prioridad)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaCreacion)
+        <td>            
+            @String.Format("{0:d/M/yyyy}", item.FechaCreacion)
+            <br />
+            @String.Format("{0:HH:mm:ss}", item.FechaCreacion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FechaUltimaActualizacion)
+            @String.Format("{0:d/M/yyyy}", item.FechaUltimaActualizacion)
+            <br />
+            @String.Format("{0:HH:mm:ss}", item.FechaUltimaActualizacion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FechaVencimiento)
-            @if(item.FechaVencimiento < DateTime.Now)
+            @String.Format("{0:d/M/yyyy}", item.FechaVencimiento)
+            <br />
+            @String.Format("{0:HH:mm:ss}", item.FechaVencimiento)
+            @if(item.FechaVencimiento < DateTime.Now && item.Status != "Problema resuelto")
             {
                 <img src="~/Content/warning.gif" />
             }
