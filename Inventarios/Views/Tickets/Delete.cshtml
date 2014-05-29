@@ -5,11 +5,10 @@
     Layout = "~/Views/Shared/_LayoutHelpDesk.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estas seguro que deseas eliminar este ticket?</h3>
 <div>
-    <h4>Ticket</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -36,78 +35,14 @@
             @Html.DisplayFor(model => model.Prioridad)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaCreacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaCreacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IdCreador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdCreador)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaUltimaActualizacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaUltimaActualizacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaVencimiento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaVencimiento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.KnowledgeItem.Titulo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.KnowledgeItem.Titulo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Articulos.OtrosDetalles)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Articulos.OtrosDetalles)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Personals.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Personals.Nombre)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar al listado", "Index")
         </div>
     }
 </div>
