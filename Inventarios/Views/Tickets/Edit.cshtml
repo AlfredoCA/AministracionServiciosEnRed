@@ -42,6 +42,14 @@
         </div>
 
         <div class="form-group">
+            @Html.Label("Status", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Status)
+                @Html.ValidationMessageFor(model => model.Status)
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.Label("Fecha de creación", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DisplayTextFor(model => model.FechaCreacion)
@@ -71,7 +79,8 @@
         <div class="form-group">
             @Html.Label("Fecha de vencimiento", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaVencimiento)
+                @Html.DisplayTextFor(model => model.FechaVencimiento)
+                @Html.HiddenFor(model => model.FechaVencimiento)
                 @Html.ValidationMessageFor(model => model.FechaVencimiento)
             </div>
         </div>

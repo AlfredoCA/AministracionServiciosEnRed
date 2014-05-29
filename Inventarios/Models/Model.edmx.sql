@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2014 13:56:15
+-- Date Created: 05/28/2014 14:40:16
 -- Generated from EDMX file: C:\Users\JuanCarlos\Documents\GitHub\AministracionServiciosEnRed\Inventarios\Models\Model.edmx
 -- --------------------------------------------------
 
@@ -53,9 +53,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosRelacion1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RelacionSet] DROP CONSTRAINT [FK_ArticulosRelacion1];
 GO
-IF OBJECT_ID(N'[dbo].[FK_TicketPersonals]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_TicketPersonals];
-GO
 IF OBJECT_ID(N'[dbo].[FK_KnowledgeItemTicket]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_KnowledgeItemTicket];
 GO
@@ -64,6 +61,9 @@ IF OBJECT_ID(N'[dbo].[FK_ComentarioKnowledgeItem]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_ArticulosTicket]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_ArticulosTicket];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PersonalsTicket]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TicketSet] DROP CONSTRAINT [FK_PersonalsTicket];
 GO
 
 -- --------------------------------------------------
@@ -233,7 +233,8 @@ CREATE TABLE [dbo].[TicketSet] (
     [Descripcion] nvarchar(max)  NOT NULL,
     [KnowledgeItemId] int  NULL,
     [ArticulosIdArticulo] int  NULL,
-    [PersonalsIdPersonal] int  NULL
+    [PersonalsIdPersonal] int  NULL,
+    [Status] nvarchar(max)  NOT NULL
 );
 GO
 

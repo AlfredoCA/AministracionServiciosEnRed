@@ -204,6 +204,7 @@
     <Property Name="KnowledgeItemId" Type="int" Nullable="true" />
     <Property Name="ArticulosIdArticulo" Type="int" Nullable="true" />
     <Property Name="PersonalsIdPersonal" Type="int" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="KnowledgeItemSet">
     <Key>
@@ -795,6 +796,7 @@
           <Property Name="ArticulosIdArticulo" Type="Int32" Nullable="true" />
           <NavigationProperty Name="Personals" Relationship="cmdbModel.PersonalsTicket" FromRole="Ticket" ToRole="Personals" />
           <Property Name="PersonalsIdPersonal" Type="Int32" Nullable="true" />
+          <Property Name="Status" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="KnowledgeItem">
           <Key>
@@ -995,6 +997,7 @@
           <ScalarProperty Name="KnowledgeItemId" ColumnName="KnowledgeItemId" />
           <ScalarProperty Name="ArticulosIdArticulo" ColumnName="ArticulosIdArticulo" />
           <ScalarProperty Name="PersonalsIdPersonal" ColumnName="PersonalsIdPersonal" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

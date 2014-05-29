@@ -26,6 +26,7 @@ namespace Inventarios.Models
         public Nullable<int> KnowledgeItemId { get; set; }
         public Nullable<int> ArticulosIdArticulo { get; set; }
         public Nullable<int> PersonalsIdPersonal { get; set; }
+        public string Status { get; set; }
     
         public virtual KnowledgeItem KnowledgeItem { get; set; }
         public virtual Articulos Articulos { get; set; }

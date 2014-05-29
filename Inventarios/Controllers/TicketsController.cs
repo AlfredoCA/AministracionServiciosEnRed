@@ -50,11 +50,34 @@ namespace Inventarios.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Titulo,Categoria,Prioridad,FechaVencimiento,Descripcion,KnowledgeItemId,ArticulosIdArticulo,PersonalsIdPersonal")] Ticket ticket)
+        public ActionResult Create([Bind(Include = "Id,Titulo,Categoria,Prioridad,Status,Descripcion,KnowledgeItemId,ArticulosIdArticulo,PersonalsIdPersonal")] Ticket ticket)
         {
             ticket.FechaCreacion = DateTime.Now;
             ticket.FechaUltimaActualizacion = DateTime.Now;
             ticket.IdCreador = User.Identity.Name;
+            
+            switch(ticket.Prioridad)
+            {
+                case "Muy alta":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(2);
+                    break;
+                case "Alta":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(8);
+                    break;
+                case "Media":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(24);
+                    break;
+                case "Baja":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(36);
+                    break;
+                case "Muy baja":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(160);
+                    break;
+                default:                    
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(2400);
+                    break;
+            }
+
             if (ModelState.IsValid)
             {
                 db.TicketSet.Add(ticket);
@@ -91,8 +114,30 @@ namespace Inventarios.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Titulo,Categoria,Prioridad,FechaCreacion,IdCreador,FechaUltimaActualizacion,FechaVencimiento,Descripcion,KnowledgeItemId,ArticulosIdArticulo,PersonalsIdPersonal")] Ticket ticket)
+        public ActionResult Edit([Bind(Include = "Id,Titulo,Categoria,Prioridad,Status,FechaCreacion,IdCreador,FechaUltimaActualizacion,FechaVencimiento,Descripcion,KnowledgeItemId,ArticulosIdArticulo,PersonalsIdPersonal")] Ticket ticket)
         {
+            ticket.FechaUltimaActualizacion = DateTime.Now;
+            switch (ticket.Prioridad)
+            {
+                case "Muy alta":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(2);
+                    break;
+                case "Alta":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(8);
+                    break;
+                case "Media":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(24);
+                    break;
+                case "Baja":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(36);
+                    break;
+                case "Muy baja":
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(160);
+                    break;
+                default:
+                    ticket.FechaVencimiento = ticket.FechaCreacion.AddHours(2400);
+                    break;
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(ticket).State = EntityState.Modified;

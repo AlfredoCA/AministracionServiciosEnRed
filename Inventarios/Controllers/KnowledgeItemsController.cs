@@ -17,7 +17,13 @@ namespace Inventarios.Controllers
         // GET: KnowledgeItems
         public ActionResult Index(string search = null)
         {
-            return View(db.KnowledgeItemSet.ToList());
+            var items = db.KnowledgeItemSet.Where(x => x.Id > 0);
+            if (!String.IsNullOrEmpty(search))
+            {
+                items = items.Where(x => x.Keywords.ToUpper().Contains(search.ToUpper()));
+                ViewBag.CurrentFilter = search;
+            }
+            return View(items.ToList());
         }
 
         // GET: KnowledgeItems/Details/5

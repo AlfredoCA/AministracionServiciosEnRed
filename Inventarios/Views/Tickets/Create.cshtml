@@ -26,24 +26,60 @@
         <div class="form-group">
             @Html.Label("Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Categoria)
-                @Html.ValidationMessageFor(model => model.Categoria)
+                @Html.DropDownListFor(model => model.Categoria, new SelectList(
+                  new List<Object>{
+                       new { value = 1 , text = "Petición de serv.: mover/agregar/cambiar el sistema"  },
+                       new { value = 2 , text = "Petición de serv.: resetear contraseña" },
+                       new { value = 3 , text = "Petición de serv.: actualizar licencia"},
+					   new { value = 4 , text = "Petición de serv.: revisión contra software malicioso" },
+					   new { value = 5 , text = "Petición de serv.: mantenimiento preventivo" },
+					   new { value = 6 , text = "Fallas: hardware" },
+					   new { value = 7 , text = "Fallas: software" },
+					   new { value = 8 , text = "Fallas: servicios" },
+					   new { value = 9 , text = "Incidentes técnicos: hardware" },
+					   new { value = 10 , text = "Incidentes técnicos: software" },
+					   new { value = 11 , text = "Incidentes técnicos: servicios" },
+					   new { value = 12 , text = "Ayuda/Asistencia: solicitar información" },
+					   new { value = 13 , text = "Ayuda/Asistencia: asistencia de capacitación" }
+                    },
+                  "value",
+                  "text", 1))
             </div>
         </div>
 
         <div class="form-group">
-            @Html.Label("Priodidad", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Prioridad, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Prioridad)
-                @Html.ValidationMessageFor(model => model.Prioridad)
+                @Html.DropDownListFor(model => model.Prioridad, new SelectList(
+                  new List<Object>{
+                       new { value = 1 , text = "Muy alta"  },
+                       new { value = 2 , text = "Alta" },
+                       new { value = 3 , text = "Media"},
+					   new { value = 4 , text = "Baja" },
+					   new { value = 5 , text = "Muy baja" }
+                    },
+                  "value",
+                  "text",
+            1))
             </div>
         </div>
         
         <div class="form-group">
-            @Html.Label("Fecha de vencimiento", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Status", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaVencimiento)
-                @Html.ValidationMessageFor(model => model.FechaVencimiento)
+                @Html.DropDownListFor(model => model.Status, new SelectList(
+                  new List<Object>{
+                       new { value = 1 , text = "Nuevo"  },
+                       new { value = 2 , text = "Siendo analizado" },
+                       new { value = 3 , text = "En proceso de aprobación"},
+					   new { value = 4 , text = "Esperando a ser cerrado" },
+					   new { value = 5 , text = "Problema identificado" },
+					   new { value = 6 , text = "Problema resuelto" },
+					   new { value = 7 , text = "Problema cerrado sin ser resuelto" }
+                    },
+                  "value",
+                  "text",
+            1))
             </div>
         </div>
 
